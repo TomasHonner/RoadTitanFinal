@@ -12,6 +12,7 @@ class SecUser implements Serializable {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	static belongsTo = [appUser: AppUser]
 
 	SecUser(String username, String password) {
 		this()
