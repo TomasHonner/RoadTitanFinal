@@ -7,5 +7,18 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/road_titan_final</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="RoadTitanFinal dev" uuid="d70f6f83-85b4-4308-b31e-3f9a9a37cc81">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/grails-app/conf/DataSource.groovy</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/road_titan_final</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$MAVEN_REPOSITORY$/org/postgresql/postgresql/9.3-1101-jdbc41/postgresql-9.3-1101-jdbc41.jar</url>
+        </library>
+      </libraries>
+    </data-source>
   </component>
 </project>

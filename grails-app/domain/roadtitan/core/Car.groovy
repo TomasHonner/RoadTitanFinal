@@ -33,4 +33,9 @@ class Car {
         dateCreated type: PersistentDateTime
         lastUpdated type: PersistentDateTime
     }
+
+    @Override
+    String toString() {
+        return carName
+    }
 }

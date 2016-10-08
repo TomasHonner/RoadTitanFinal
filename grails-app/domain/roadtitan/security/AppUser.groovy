@@ -2,13 +2,15 @@ package roadtitan.security
 
 import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
+import roadtitan.core.Company
 
 class AppUser {
 
     String appUserName
     String appUserAddress
     String appUserEmail
-    static hasOne = [secUser: SecUser]
+    static hasOne = [company: Company] //secUser: SecUser,
+    static belongsTo = [secUser: SecUser]
 
     DateTime dateCreated
     DateTime lastUpdated
