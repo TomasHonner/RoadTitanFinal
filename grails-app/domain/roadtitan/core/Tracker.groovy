@@ -10,7 +10,6 @@ class Tracker {
     String trackerName
     GsmMode trackerGsmMode
     String trackerImei
-    static belongsTo = [car: Car]
 
     DateTime dateCreated
     DateTime lastUpdated

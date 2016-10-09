@@ -9,7 +9,7 @@ class Car {
     String carName
     String carRegistrationNumber
     CarType carCarType
-    static belongsTo = [company: Company]
+    static belongsTo = [company: Company , tracker: Tracker]
 
     DateTime dateCreated
     DateTime lastUpdated

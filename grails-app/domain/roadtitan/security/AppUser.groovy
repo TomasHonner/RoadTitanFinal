@@ -34,4 +34,9 @@ class AppUser {
         dateCreated type: PersistentDateTime
         lastUpdated type: PersistentDateTime
     }
+
+    @Override
+    String toString() {
+        return appUserName
+    }
 }
