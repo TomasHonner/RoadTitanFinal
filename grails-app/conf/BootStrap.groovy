@@ -20,6 +20,7 @@ class BootStrap {
                     appUserName: 'ADMIN',
                     appUserEmail: 'admin@admin.com',
                     appUserAddress: 'Silicon Valley',
+                    appUserPassword: 'admin',
                     secUser: new SecUser(
                             realName: 'Tomas Honner',
                             username: 'admin',
@@ -36,6 +37,7 @@ class BootStrap {
                     appUserName: 'SUPERVISOR',
                     appUserEmail: 'supervisor@supervisor.com',
                     appUserAddress: 'Olymp',
+                    appUserPassword: 'supervisor',
                     secUser: new SecUser(
                             realName: 'Tomas Honner',
                             username: 'supervisor',
@@ -52,6 +54,7 @@ class BootStrap {
                     appUserName: 'USER',
                     appUserEmail: 'user@user.com',
                     appUserAddress: 'Olymp',
+                    appUserPassword: 'user',
                     secUser: new SecUser(
                             realName: 'Tomas Honner',
                             username: 'user',
@@ -114,6 +117,7 @@ class BootStrap {
                     appUserName: 'tom',
                     appUserEmail: 'tom@tom.com',
                     appUserAddress: 'Olymp',
+                    appUserPassword: 'tom',
                     secUser: new SecUser(
                             realName: 'Tomas Honner',
                             username: 'tom',
@@ -135,6 +139,7 @@ class BootStrap {
                     appUserName: 'ondra',
                     appUserEmail: 'ondra@ondra.com',
                     appUserAddress: 'Olymp',
+                    appUserPassword: 'ondra',
                     secUser: new SecUser(
                             realName: 'Ondra',
                             username: 'ondra',

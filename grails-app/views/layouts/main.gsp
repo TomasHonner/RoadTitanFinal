@@ -47,9 +47,9 @@
 					<sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_SUPERVISOR">
 						<li role="presentation"><g:link controller="car"><g:message code="car.title"/></g:link></li>
 						<li role="presentation"><g:link controller="tracker"><g:message code="tracker.title"/></g:link></li>
+						<li role="presentation"><g:link controller="appUser"><g:message code="user.title2"/></g:link></li>
 						<sec:ifAllGranted roles="ROLE_ADMIN">
 							<li role="presentation"><g:link controller="company"><g:message code="company.title"/></g:link></li>
-							<li role="presentation"><g:link controller="appUser"><g:message code="user.title"/></g:link></li>
 						</sec:ifAllGranted>
 					</sec:ifAnyGranted>
 				</ul>

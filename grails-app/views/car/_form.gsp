@@ -1,7 +1,7 @@
 <%@ page import="roadtitan.core.Car" %>
 
 
-<div class="fieldcontain ${hasErrors(bean: carInstance, field: 'carName', 'error')} list-group-item  list-group-item-success list-group-item-heading   ">
+<div class="fieldcontain ${hasErrors(bean: carInstance, field: 'carName', 'error')} list-group-item  list-group-item-success list-group-item-heading">
 	<label for="carName">
 		<g:message code="car.name" />:
 	</label>

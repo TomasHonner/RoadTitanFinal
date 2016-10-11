@@ -9,6 +9,7 @@ class AppUser {
     String appUserName
     String appUserAddress
     String appUserEmail
+    String appUserPassword
     static hasOne = [company: Company] //secUser: SecUser,
     static belongsTo = [secUser: SecUser]
 
@@ -17,9 +18,11 @@ class AppUser {
 
 
     static constraints = {
-        appUserName nullable: false, blank: false
+        appUserName nullable: false, blank: false, unique: true
         appUserAddress nullable: true
         appUserEmail nullable: false, blank: false, email: true
+        appUserPassword nullable: false, blank: false, password: true
+        secUser nullable: true
 
         dateCreated nullable: true
         lastUpdated nullable: true
@@ -30,6 +33,7 @@ class AppUser {
         appUserName column: "app_user_name"
         appUserAddress column: "app_user_address"
         appUserEmail column: "app_user_email"
+        appUserPassword column: "app_user_password"
 
         dateCreated type: PersistentDateTime
         lastUpdated type: PersistentDateTime
