@@ -24,6 +24,7 @@
 						<g:sortableColumn property="trackerName" title="${message(code: 'tracker.name')}" />
 						<g:sortableColumn property="trackerGsmMode" title="${message(code: 'tracker.gsmMode')}" />
 						<g:sortableColumn property="trackerImei" title="${message(code: 'tracker.imei')}" />
+						<g:sortableColumn property="trackerAssigned" title="${message(code: 'tracker.assigned')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +34,7 @@
 						<td>${fieldValue(bean: trackerInstance, field: "trackerName")}</td>
 						<td>${fieldValue(bean: trackerInstance, field: "trackerGsmMode")}</td>
 						<td>${fieldValue(bean: trackerInstance, field: "trackerImei")}</td>
+						<td>${fieldValue(bean: trackerInstance, field: "trackerAssigned")}</td>
 					</tr>
 				</g:each>
 				</tbody>

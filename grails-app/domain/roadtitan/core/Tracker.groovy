@@ -10,6 +10,8 @@ class Tracker {
     String trackerName
     GsmMode trackerGsmMode
     String trackerImei
+    boolean trackerAssigned
+    static belongsTo = [company: Company]
 
     DateTime dateCreated
     DateTime lastUpdated
@@ -19,6 +21,8 @@ class Tracker {
         trackerName nullable: true
         trackerGsmMode nullable: true
         trackerImei nullable: true, unique: true
+        trackerAssigned defaultValue: false
+        company nullable: true
 
         dateCreated nullable: true
         lastUpdated nullable: true
@@ -30,6 +34,7 @@ class Tracker {
         trackerName column: "tracker_name"
         trackerGsmMode column: "tracker_gsm_mode"
         trackerImei column: "tracker_imei"
+        trackerAssigned column: "tracker_assigned"
 
         dateCreated type: PersistentDateTime
         lastUpdated type: PersistentDateTime

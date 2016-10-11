@@ -41,7 +41,7 @@
 			<div class="col-lg-4 col-lg-offset-4">
 				<ul class="nav nav-tabs">
 					<sec:ifAnyGranted roles="ROLE_USER, ROLE_SUPERVISOR, ROLE_ADMIN">
-						<li role="presentation"><g:link controller="map"><g:message code="map.title"/></g:link></li>
+						<li role="presentation"><g:link controller="logbook"><g:message code="logbook.title"/></g:link></li>
 						<li role="presentation"><g:link controller="reservation"><g:message code="reservation.title"/></g:link></li>
 					</sec:ifAnyGranted>
 					<sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_SUPERVISOR">

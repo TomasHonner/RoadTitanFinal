@@ -1,6 +1,7 @@
 package roadtitan.reservation
 
 import grails.plugin.springsecurity.annotation.Secured
+import roadtitan.core.Car
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -9,11 +10,14 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class ReservationController {
 
+    def secService
+    def carService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Reservation.list(params), model:[reservationInstanceCount: Reservation.count()]
+        respond Reservation.findAllByCompany(secService.currentCompany(), params), model:[reservationInstanceCount: Reservation.count()]
     }
 
     def show(Reservation reservationInstance) {
@@ -21,6 +25,8 @@ class ReservationController {
     }
 
     def create() {
+        def resCars = carService.currentCars
+        System.out.print("XXXXXXXXXXXXXXXXXXXXXXXXXX  "+resCars.toString())
         respond new Reservation(params)
     }
 
@@ -36,6 +42,8 @@ class ReservationController {
             return
         }
 
+        reservationInstance.setCompany(secService.currentCompany())
+        reservationInstance.setAppUser(secService.currentAppUser())
         reservationInstance.save flush:true
 
         request.withFormat {

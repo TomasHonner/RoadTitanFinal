@@ -18,6 +18,7 @@ class Car {
         carName nullable: true
         carRegistrationNumber nullable: true, unique: true
         carCarType nullable: true
+        company nullable: true
 
         dateCreated nullable: true
         lastUpdated nullable: true

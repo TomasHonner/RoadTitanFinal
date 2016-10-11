@@ -22,21 +22,21 @@
 	<g:select name="carCarType" from="${enums.CarType?.values()}" keys="${enums.CarType.values()*.name()}" value="${carInstance?.carCarType?.name()}"  noSelection="['': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: carInstance, field: 'company', 'error')} required list-group-item">
+%{--<div class="fieldcontain ${hasErrors(bean: carInstance, field: 'company', 'error')} required list-group-item">
 	<label for="company">
 		<g:message code="company.title" />:
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="company" name="company.id" from="${roadtitan.core.Company.list()}" optionKey="id" required="" value="${carInstance?.company?.id}" class="many-to-one"/>
 
-</div>
+</div>--}%
 
 <div class="fieldcontain ${hasErrors(bean: carInstance, field: 'tracker', 'error')} required list-group-item">
 	<label for="tracker">
 		<g:message code="car.tracker" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="tracker" name="tracker.id" from="${roadtitan.core.Tracker.list()}" optionKey="id" required="" value="${carInstance?.tracker?.id}" class="many-to-one"/>
+	<g:select id="tracker" name="tracker.id" from="${roadtitan.core.Tracker.findAllByTrackerAssigned(false)}" optionKey="id" required="" value="${carInstance?.tracker?.id}" class="many-to-one"/>
 
 </div>
 

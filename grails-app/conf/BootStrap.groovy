@@ -72,6 +72,7 @@ class BootStrap {
             Company company2 = new Company(companyName: "Ondras Company", companyCode: "321", companyAddress: "Silicon Valley").save(failOnError: true)
             Company company3 = new Company(companyName: "Bobs Company", companyCode: "789", companyAddress: "Silicon Valley").save(failOnError: true)
 
+            /*
             Tracker tracker1 = new Tracker(trackerNumber: "1", trackerName: "Tracker 1", trackerGsmMode: GsmMode.MODE_1, trackerImei: "987456321",
             car: new Car(carName: "Škoda Yeti", carRegistrationNumber: "123", carCarType: CarType.PERSONAL, company: company1).save(failOnError: true)
             ).save(failOnError: true)
@@ -86,6 +87,23 @@ class BootStrap {
             ).save(failOnError: true)
             Tracker tracker5 = new Tracker(trackerNumber: "5", trackerName: "Tracker 5", trackerGsmMode: GsmMode.MODE_2, trackerImei: "4569874123",
             car: new Car(carName: "Mercedes Acros", carRegistrationNumber: "147", carCarType: CarType.TIR, company: company3).save(failOnError: true)
+            ).save(failOnError: true)
+            */
+
+            Car car1 = new Car(carName: "Škoda Yeti", carRegistrationNumber: "123", carCarType: CarType.PERSONAL, company: company1,
+                    tracker: new Tracker(trackerNumber: "1", trackerName: "Tracker 1", trackerGsmMode: GsmMode.MODE_1, trackerImei: "123654789", trackerAssigned: true, company: company1).save(failOnError: true)
+            ).save(failOnError: true)
+            Car car2 = new Car(carName: "VW Transporter", carRegistrationNumber: "456", carCarType: CarType.VAN, company: company1,
+                    tracker: new Tracker(trackerNumber: "2", trackerName: "Tracker 2", trackerGsmMode: GsmMode.MODE_2, trackerImei: "9874563321", trackerAssigned: true, company: company1).save(failOnError: true)
+            ).save(failOnError: true)
+            Car car3 = new Car(carName: "Škoda Superb", carRegistrationNumber: "789", carCarType: CarType.PERSONAL, company: company2,
+                    tracker: new Tracker(trackerNumber: "3", trackerName: "Tracker 3", trackerGsmMode: GsmMode.MODE_3, trackerImei: "147852369", trackerAssigned: true, company: company2).save(failOnError: true)
+            ).save(failOnError: true)
+            Car car4 = new Car(carName: "Toyota Hillux", carRegistrationNumber: "147", carCarType: CarType.SUV, company: company2,
+                    tracker: new Tracker(trackerNumber: "4", trackerName: "Tracker 4", trackerGsmMode: GsmMode.MODE_1, trackerImei: "963258741", trackerAssigned: true, company: company2).save(failOnError: true)
+            ).save(failOnError: true)
+            Car car5 = new Car(carName: "Mercedes Acros", carRegistrationNumber: "369", carCarType: CarType.TIR, company: company3,
+                    tracker: new Tracker(trackerNumber: "5", trackerName: "Tracker 5", trackerGsmMode: GsmMode.MODE_2, trackerImei: "15963214789", trackerAssigned: true, company: company3).save(failOnError: true)
             ).save(failOnError: true)
         }
 

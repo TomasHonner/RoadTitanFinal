@@ -9,11 +9,13 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class TrackerController {
 
+    def secService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Tracker.list(params), model:[trackerInstanceCount: Tracker.count()]
+        respond Tracker.findAllByCompany(secService.currentCompany()), model:[trackerInstanceCount: Tracker.count()]
     }
 
     def show(Tracker trackerInstance) {
@@ -36,6 +38,7 @@ class TrackerController {
             return
         }
 
+        trackerInstance.setCompany(secService.currentCompany())
         trackerInstance.save flush:true
 
         request.withFormat {

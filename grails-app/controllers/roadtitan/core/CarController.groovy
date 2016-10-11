@@ -9,11 +9,13 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class CarController {
 
+    def secService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Car.list(params), model:[carInstanceCount: Car.count()]
+        respond Car.findAllByCompany(secService.currentCompany(), params), model:[carInstanceCount: Car.count()]
     }
 
     def show(Car carInstance) {
@@ -36,6 +38,8 @@ class CarController {
             return
         }
 
+        carInstance.setCompany(secService.currentCompany())
+        carInstance.tracker.setTrackerAssigned(true)
         carInstance.save flush:true
 
         request.withFormat {

@@ -18,37 +18,37 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ul>
+			<ul class="list-group">
 				<g:if test="${trackerInstance?.trackerNumber}">
-				<li class="fieldcontain">
+				<li class="list-group-item list-group-item-heading list-group-item-success">
 					<span><g:message code="tracker.number" /></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerNumber"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${trackerInstance?.trackerName}">
-				<li class="fieldcontain">
+				<li class="list-group-item">
 					<span><g:message code="tracker.name" /></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerName"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${trackerInstance?.trackerGsmMode}">
-				<li class="fieldcontain">
+				<li class="list-group-item">
 					<span><g:message code="tracker.gsmMode" /></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerGsmMode"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${trackerInstance?.trackerImei}">
-				<li class="fieldcontain">
+				<li class="list-group-item">
 					<span><g:message code="tracker.imei" /></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerImei"/></span>
 				</li>
 				</g:if>
 
 				%{--<g:if test="${trackerInstance?.car}">
-				<li class="fieldcontain">
+				<li class="list-group-item">
 					<span><g:message code="tracker.car" /></span>
 						<span><g:link controller="car" action="show" id="${trackerInstance?.car?.id}">${trackerInstance?.car?.encodeAsHTML()}</g:link></span>
 				</li>

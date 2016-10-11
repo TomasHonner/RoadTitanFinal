@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div class="nav" role="navigation">
-			<ul>
+			<ul class="nav nav-tabs">
 				<li><g:link class="list" action="index"><g:message code="car.title2" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="car.crud.new" /></g:link></li>
 			</ul>
