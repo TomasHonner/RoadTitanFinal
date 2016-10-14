@@ -1,12 +1,16 @@
 package roadtitan.location
 
-import roadtitan.core.Company
+import roadtitan.core.Tracker
 
 class LogBook {
 
     static hasMany = [trips: Trip]
-    static belongsTo = [company: Company]
+    static belongsTo = [tracker: Tracker]
 
     static constraints = {
+    }
+
+    static mapping = {
+        table 'logbooks'
     }
 }

@@ -8,7 +8,7 @@ class Location {
     Double latitude
     Double longitude
     DateTime timestamp
-    static belongsTo = [trip: Trip]
+    Trip trip
 
     DateTime dateCreated
     DateTime lastUpdated
@@ -17,6 +17,7 @@ class Location {
         latitude nullable: false
         longitude nullable: false
         timestamp nullable: false
+        trip nullable: true
 
         dateCreated nullable: true
         lastUpdated nullable: true

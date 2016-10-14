@@ -15,4 +15,9 @@ class CarService {
     {
         return Car.findAllByCompany(secService.currentCompany())
     }
+
+    def getCar(Long id)
+    {
+        return Car.findById(id)
+    }
 }

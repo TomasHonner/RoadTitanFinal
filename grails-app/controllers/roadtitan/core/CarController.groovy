@@ -10,12 +10,13 @@ import grails.transaction.Transactional
 class CarController {
 
     def secService
+    def carService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Car.findAllByCompany(secService.currentCompany(), params), model:[carInstanceCount: Car.count()]
+        respond carService.currentCars(params), model:[carInstanceCount: Car.count()]
     }
 
     def show(Car carInstance) {

@@ -3,6 +3,7 @@ package roadtitan.core
 import enums.GsmMode
 import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
+import roadtitan.location.LogBook
 
 class Tracker {
 
@@ -12,6 +13,7 @@ class Tracker {
     String trackerImei
     boolean trackerAssigned
     static belongsTo = [company: Company]
+    static hasOne = [logBook: LogBook]
 
     DateTime dateCreated
     DateTime lastUpdated

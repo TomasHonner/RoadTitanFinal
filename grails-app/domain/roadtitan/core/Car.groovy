@@ -3,6 +3,7 @@ package roadtitan.core
 import enums.CarType
 import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
+import roadtitan.location.LogBook
 
 class Car {
 

@@ -2,6 +2,7 @@ package roadtitan.location
 
 import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
+import roadtitan.reservation.Reservation
 
 class Trip {
 
@@ -9,8 +10,7 @@ class Trip {
     DateTime tripEndDateTime
     Integer tripLength
     static hasMany = [locations: Location]
-    static belongsTo = [logBook: LogBook]
-    static hasOne = [tripStartLocation: Location, tripEndLocation: Location]
+    static belongsTo = [reservation: Reservation]
 
     DateTime dateCreated
     DateTime lastUpdated
@@ -18,8 +18,6 @@ class Trip {
     static constraints = {
         tripStartDateTime nullable: true
         tripEndDateTime nullable: true
-        tripStartLocation nullable: true
-        tripEndLocation nullable: true
         tripLength nullable: true
 
         dateCreated nullable: true
@@ -30,8 +28,6 @@ class Trip {
         table 'trips'
         tripStartDateTime column: "trip_start_date_time", type: PersistentDateTime
         tripEndDateTime column: "trip_end_date_time", type: PersistentDateTime
-        tripStartLocation column: "trip_start_location"
-        tripEndLocation column: "trip_start_location"
         tripLength column: "trip_length"
 
         dateCreated type: PersistentDateTime
