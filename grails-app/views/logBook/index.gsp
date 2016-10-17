@@ -34,8 +34,13 @@
 
 <body>
     <div>
-            <g:select id="car" from="${cars}" name="car" value="car.id" optionKey="id" optionValue="carName"/>
-            <button id="logSubmit" class="btn btn-primary btn-sm" onclick="showLogBook();"><g:message code="logbook.submitButton"/></button>
+            %{--<g:select id="car" from="${cars}" name="car" value="car.id" optionKey="id" optionValue="carName"/>
+            name="myForm" url="[action:'list',controller:'book'
+            <button id="logSubmit" class="btn btn-primary btn-sm" onclick="showLogBook();"><g:message code="logbook.submitButton"/></button>--}%
+        <g:form name="selectCar" url="[action: 'show', controller: 'logBook']">
+            <g:select id="carId" from="${cars}" name="car" value="car.id" optionKey="id" optionValue="carName"/>
+            <g:submitButton id="carSelectButton" class="btn btn-sm btn-primary" name="showLogbook" value="${message(code: 'logbook.submitButton')}"/>
+        </g:form>
     </div>
     <div id="pop"></div>
 </body>

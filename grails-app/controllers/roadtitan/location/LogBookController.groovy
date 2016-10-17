@@ -15,8 +15,16 @@ class LogBookController {
 
     def index() {
         def cars = carService.getCurrentCars()
-        System.out.print("XXXXXXXXXXXXXXX "+cars.toString())
-        [cars: cars]
+        return [cars: cars]
+    }
+
+    def show()
+    {
+        Long carId = Long.valueOf(params.car)
+        Car car = carService.getCar(carId)
+        LogBook book = car.tracker.getLogBook()
+        def trips = book.getTrips()
+        return [trips: trips]
     }
 
     def showLogBook(){
@@ -24,9 +32,6 @@ class LogBookController {
         Car car = carService.getCar(carId)
         LogBook book = car.tracker.getLogBook()
         def trips = book.getTrips()
-        /*trips.each {
-            locations = null
-        }*/
         render trips as JSON
 
     }

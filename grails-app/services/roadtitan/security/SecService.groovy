@@ -36,4 +36,11 @@ class SecService {
 
         return secUser
     }
+
+    def currentUserRole()
+    {
+        def secUser = (SecUser) springSecurityService.currentUser
+
+        return secUser.getAuthorities()
+    }
 }

@@ -15,6 +15,8 @@ class Reservation {
     DateTime reservationStartDate
     DateTime reservationEndDate
     String reservationDriverName
+    String reservationStartLocation
+    String reservationEndLocation
     ReservationState reservationState
     RejectionReason reservationRejectionReason
     WayOfFinancing reservationWayOfFinancing
@@ -31,6 +33,8 @@ class Reservation {
         reservationState nullable: true
         reservationRejectionReason nullable: true
         reservationWayOfFinancing nullable: true
+        reservationStartLocation nullable: true
+        reservationEndLocation nullable: true
         company nullable: true
         appUser nullable: true
 
@@ -47,6 +51,8 @@ class Reservation {
         reservationState column: "reservation_state"
         reservationRejectionReason column: "reservation_rejection_reason"
         reservationWayOfFinancing column: "reservation_way_of_financing"
+        reservationStartLocation column: "reservation_start_location"
+        reservationEndLocation column: "reservation_end_location"
 
         dateCreated type: PersistentDateTime
         lastUpdated type: PersistentDateTime

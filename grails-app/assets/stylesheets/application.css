@@ -21,3 +21,16 @@
 {
     color: blue;
 }
+
+.map
+{
+    width: 80%;
+    height: 650px;
+    margin-top: 20px;
+}
+
+.center
+{
+    float: none;
+    margin: auto;
+}

@@ -42,6 +42,23 @@
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationEndDate"/></span>
 				</li>
 				</g:if>
+
+				//
+				<g:if test="${reservationInstance?.reservationStartLocation}">
+					<li class="list-group-item">
+						<span><g:message code="reservation.startLocation" /></span>
+
+						<span><g:fieldValue bean="${reservationInstance}" field="reservationStartLocation"/></span>
+
+					</li>
+				</g:if>
+
+				<g:if test="${reservationInstance?.reservationEndLocation}">
+					<li class="list-group-item">
+						<span><g:message code="reservation.endLocation" /></span>
+						<span><g:fieldValue bean="${reservationInstance}" field="reservationEndLocation"/></span>
+					</li>
+				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationDriverName}">
 				<li class="list-group-item">

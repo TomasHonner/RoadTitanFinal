@@ -9,11 +9,25 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class AppUserController {
 
+    def secService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond AppUser.list(params), model:[appUserInstanceCount: AppUser.count()]
+        String currentUserRole = secService.currentUserRole().toString()
+        currentUserRole = currentUserRole.replace("[ROLE_", "")
+        currentUserRole = currentUserRole.replace("]", "")
+        System.out.print(currentUserRole)
+        if(currentUserRole == "ADMIN")
+        {
+            respond AppUser.list(params), model:[appUserInstanceCount: AppUser.count()]
+        }
+        else
+        {
+            respond AppUser.findAllByCompany(secService.currentCompany(), params), model:[appUserInstanceCount: AppUser.count()]
+        }
+
     }
 
     def show(AppUser appUserInstance) {

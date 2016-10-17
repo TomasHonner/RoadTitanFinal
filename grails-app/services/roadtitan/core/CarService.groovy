@@ -11,13 +11,18 @@ class CarService {
 
     }
 
-    def getCurrentCars()
+    def getCurrentCars(def params)
     {
-        return Car.findAllByCompany(secService.currentCompany())
+        return Car.findAllByCompany(secService.currentCompany(), params)
     }
 
     def getCar(Long id)
     {
         return Car.findById(id)
+    }
+
+    def getCarLocation()
+    {
+
     }
 }

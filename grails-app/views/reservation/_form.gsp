@@ -21,6 +21,20 @@
 	<joda:dateTimePicker name="reservationEndDate" value="${new org.joda.time.DateTime()}" precision="hour" years="${2016..2040}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationStartLocation', 'error')} list-group-item">
+	<label for="reservationStartLocation">
+		<g:message code="reservation.startLocation" />
+	</label>
+	<g:textField name="reservationStartLocation" value="${reservationInstance?.reservationStartLocation}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationEndLocation', 'error')} list-group-item">
+	<label for="reservationEndLocation">
+		<g:message code="reservation.endLocation" />
+	</label>
+	<g:textField name="reservationEndLocation" value="${reservationInstance?.reservationEndLocation}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationEndDate', 'error')} list-group-item">
 	<label for="reservedCar">
 		<g:message code="reservation.reservedCar" />

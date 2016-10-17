@@ -16,7 +16,7 @@ class CarController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond carService.currentCars(params), model:[carInstanceCount: Car.count()]
+        respond carService.getCurrentCars(params), model:[carInstanceCount: Car.count()]
     }
 
     def show(Car carInstance) {

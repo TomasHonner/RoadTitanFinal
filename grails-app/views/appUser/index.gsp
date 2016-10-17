@@ -36,7 +36,7 @@
                         <td>${fieldValue(bean: appUserInstance, field: "appUserAddress")}</td>
 						<td>${fieldValue(bean: appUserInstance, field: "company")}</td>
 						<td><g:formatBoolean boolean="${appUserInstance.secUser.enabled}" false="No" true="Yes"/></td>
-						<td></td>
+						<td>${fieldValue(bean: appUserInstance, field: "secUser.authorities")}</td>
 					</tr>
 				</g:each>
 				</tbody>

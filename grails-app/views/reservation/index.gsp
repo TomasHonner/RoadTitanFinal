@@ -23,6 +23,8 @@
 						<g:sortableColumn property="reservationName" title="${message(code:'reservation.name')}" />
 						<g:sortableColumn property="reservationStartDate" title="${message(code: 'reservation.startDate')}" />
 						<g:sortableColumn property="reservationEndDate" title="${message(code: 'reservation.endDate')}" />
+						<g:sortableColumn property="reservationStartLocation" title="${message(code: 'reservation.startLocation')}" />
+						<g:sortableColumn property="reservationEndLocation" title="${message(code: 'reservation.endLocation')}" />
 						<g:sortableColumn property="reservationDriverName" title="${message(code: 'reservation.driverName')}" />
 						<g:sortableColumn property="reservationState" title="${message(code: 'reservation.state')}" />
 						<g:sortableColumn property="reservationRejectionReason" title="${message(code: 'reservation.rejectionReason')}" />
@@ -36,6 +38,8 @@
 						<td><g:link action="show" id="${reservationInstance.id}">${fieldValue(bean: reservationInstance, field: "reservationName")}</g:link></td>
 						<td>${fieldValue(bean: reservationInstance, field: "reservationStartDate")}</td>
 						<td>${fieldValue(bean: reservationInstance, field: "reservationEndDate")}</td>
+						<td>${fieldValue(bean: reservationInstance, field: "reservationStartLocation")}</td>
+						<td>${fieldValue(bean: reservationInstance, field: "reservationEndLocation")}</td>
 						<td>${fieldValue(bean: reservationInstance, field: "reservationDriverName")}</td>
 						<td>${fieldValue(bean: reservationInstance, field: "reservationState")}</td>
 						<td>${fieldValue(bean: reservationInstance, field: "reservationRejectionReason")}</td>
