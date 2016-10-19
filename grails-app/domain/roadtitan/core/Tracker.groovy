@@ -25,6 +25,7 @@ class Tracker {
         trackerImei nullable: true, unique: true
         trackerAssigned defaultValue: false
         company nullable: true
+        logBook nullable: true
 
         dateCreated nullable: true
         lastUpdated nullable: true

@@ -5,13 +5,13 @@ import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import roadtitan.core.Car
 
-@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR"])
+@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR","ROLE_USER"])
 @Transactional(readOnly = true)
 class LogBookController {
 
     def carService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [index: 'GET', show: 'GET', showLogBook: 'GET']
 
     def index() {
         def cars = carService.getCurrentCars()
@@ -34,8 +34,5 @@ class LogBookController {
         def trips = book.getTrips()
         render trips as JSON
 
-    }
-
-    def item(){
     }
 }

@@ -22,7 +22,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:appUserInstance, action:'save']" >
+			<g:form url="[resource:appUserInstance, action:'preSave']" >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>

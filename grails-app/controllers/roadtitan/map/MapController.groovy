@@ -11,7 +11,6 @@ class MapController {
     static allowedMethods = [getTripLocations: 'GET', index: 'GET', tripMap: 'GET', carMap: 'GET', getCarLocation: 'GET']
 
     def tripService
-    def carService
 
     def index() {
 

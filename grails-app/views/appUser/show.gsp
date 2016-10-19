@@ -40,6 +40,13 @@
 						<span><g:fieldValue bean="${appUserInstance}" field="appUserAddress"/></span>
 				</li>
 				</g:if>
+
+				<g:if test="${appUserInstance?.appUserAddress}">
+					<li class="list-group-item">
+						<span><g:message code="user.role" /></span>
+						<span>${appUserInstance.secUser.authorities}</span>
+					</li>
+				</g:if>
 			
 				<g:if test="${appUserInstance?.company}">
 				<li class="list-group-item">

@@ -1,7 +1,7 @@
 package roadtitan.security
 
+import grails.plugin.springsecurity.SpringSecurityUtils
 import grails.plugin.springsecurity.annotation.Secured
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -39,7 +39,19 @@ class AppUserController {
     }
 
     @Transactional
+    def preSave(AppUser appUserInstance)
+    {
+        if (SpringSecurityUtils.ifAllGranted("ROLE_SUPERVISOR"))
+        {
+            appUserInstance.setCompany(secService.currentCompany())
+        }
+
+        save(appUserInstance)
+    }
+
+    @Transactional
     def save(AppUser appUserInstance) {
+
         if (appUserInstance == null) {
             notFound()
             return
@@ -50,12 +62,15 @@ class AppUserController {
             return
         }
 
-        String authority = ""
-        if (params.role == "1") authority = "ROLE_USER"
-        if (params.role == "2") authority = "ROLE_SUPERVISOR"
-        if (params.role == "3") authority = "ROLE_ADMIN"
+        String privileges = ""
+        if (params.role == "1") privileges = "ROLE_USER"
+        if (params.role == "2") privileges = "ROLE_SUPERVISOR"
+        if (params.role == "3") privileges = "ROLE_ADMIN"
 
-        SecRole role = SecRole.findByAuthority(authority)
+
+        System.out.print(secService.currentCompany())
+
+        SecRole role = SecRole.findByAuthority(privileges)
         SecUser user = new SecUser(username: params.appUserName, password: params.appUserPassword).save(failOnError: true)
         if (!user.authorities.contains(role))
         {

@@ -37,19 +37,19 @@
 		</div>
 	</div>
 	<div id="menu">
-		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4">
+		<div class="row center">
+			<div class="col-lg-5 col-lg-offset-4">
 				<ul class="nav nav-tabs">
 					<sec:ifAnyGranted roles="ROLE_USER, ROLE_SUPERVISOR, ROLE_ADMIN">
-						<li role="presentation"><g:link controller="logBook"><g:message code="logbook.title"/></g:link></li>
-						<li role="presentation"><g:link controller="reservation"><g:message code="reservation.title"/></g:link></li>
+						<li role="presentation"><g:link controller="logBook"><g:message code="logbook.title2"/></g:link></li>
+						<li role="presentation"><g:link controller="reservation"><g:message code="reservation.title2"/></g:link></li>
 					</sec:ifAnyGranted>
 					<sec:ifAnyGranted roles="ROLE_ADMIN, ROLE_SUPERVISOR">
-						<li role="presentation"><g:link controller="car"><g:message code="car.title"/></g:link></li>
-						<li role="presentation"><g:link controller="tracker"><g:message code="tracker.title"/></g:link></li>
+						<li role="presentation"><g:link controller="car"><g:message code="car.title2"/></g:link></li>
+						<li role="presentation"><g:link controller="tracker"><g:message code="tracker.title2"/></g:link></li>
 						<li role="presentation"><g:link controller="appUser"><g:message code="user.title2"/></g:link></li>
 						<sec:ifAllGranted roles="ROLE_ADMIN">
-							<li role="presentation"><g:link controller="company"><g:message code="company.title"/></g:link></li>
+							<li role="presentation"><g:link controller="company"><g:message code="company.title2"/></g:link></li>
 						</sec:ifAllGranted>
 					</sec:ifAnyGranted>
 				</ul>

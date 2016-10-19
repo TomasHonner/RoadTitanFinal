@@ -8,6 +8,8 @@ class LogBook {
     static belongsTo = [tracker: Tracker]
 
     static constraints = {
+        trips nullable: true
+        tracker nullable: true
     }
 
     static mapping = {

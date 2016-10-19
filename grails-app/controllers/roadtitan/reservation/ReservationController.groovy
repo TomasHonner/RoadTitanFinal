@@ -6,7 +6,7 @@ import roadtitan.core.Car
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
-@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR"])
+@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR", "ROLE_USER"])
 @Transactional(readOnly = true)
 class ReservationController {
 
@@ -25,9 +25,8 @@ class ReservationController {
     }
 
     def create() {
-        def resCars = carService.currentCars
-        System.out.print("XXXXXXXXXXXXXXXXXXXXXXXXXX  "+resCars.toString())
-        respond new Reservation(params)
+        def resCars = carService.getCurrentCars()
+        respond new Reservation(params), model: [resCars: resCars]
     }
 
     @Transactional

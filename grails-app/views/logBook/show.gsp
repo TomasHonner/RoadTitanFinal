@@ -30,7 +30,7 @@
                 <td>${trip.reservation.reservationName.toString()}</td>
                 <td>${trip.reservation.reservationDriverName.toString()}</td>
                 <td>${trip.reservation.reservedCar.toString()}</td>
-                <td>${trip.tripLength.toString()}</td>
+                <td>${trip.tripLength.toString()} km</td>
                 <td><g:formatBoolean boolean="${trip.tripAuthorized}" true="Yes" false="No"/></td>
                 <td><g:link controller="map" action="tripMap" params="${[tripId: trip.id]}"><g:message code="logbook.showDeatils"/></g:link></td>
                 </tr>

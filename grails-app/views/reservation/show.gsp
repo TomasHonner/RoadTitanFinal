@@ -43,7 +43,6 @@
 				</li>
 				</g:if>
 
-				//
 				<g:if test="${reservationInstance?.reservationStartLocation}">
 					<li class="list-group-item">
 						<span><g:message code="reservation.startLocation" /></span>

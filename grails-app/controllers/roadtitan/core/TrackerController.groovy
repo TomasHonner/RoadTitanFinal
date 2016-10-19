@@ -1,6 +1,7 @@
 package roadtitan.core
 
 import grails.plugin.springsecurity.annotation.Secured
+import roadtitan.location.LogBook
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -26,6 +27,7 @@ class TrackerController {
         respond new Tracker(params)
     }
 
+
     @Transactional
     def save(Tracker trackerInstance) {
         if (trackerInstance == null) {
@@ -40,10 +42,12 @@ class TrackerController {
 
         trackerInstance.setCompany(secService.currentCompany())
         trackerInstance.save flush:true
+        LogBook book = new LogBook(tracker: trackerInstance).save(failOnError: true)
+        trackerInstance.setLogBook(book)
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'tracker.label', default: 'Tracker'), trackerInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'tracker.title'), trackerInstance.id])
                 redirect trackerInstance
             }
             '*' { respond trackerInstance, [status: CREATED] }

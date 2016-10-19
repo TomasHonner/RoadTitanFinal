@@ -1,7 +1,10 @@
 package roadtitan.core
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
+
+@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR","ROLE_USER"])
 @Transactional
 class CarService {
 

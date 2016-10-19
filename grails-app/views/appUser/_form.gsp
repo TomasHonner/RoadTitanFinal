@@ -49,6 +49,7 @@
 
 </div>
 
+<sec:ifAnyGranted roles="ROLE_ADMIN">
 <div class="fieldcontain ${hasErrors(bean: appUserInstance, field: 'company', 'error')} required list-group-item">
 	<label for="company">
 		<g:message code="company.title" />
@@ -57,6 +58,7 @@
 	<g:select id="company" name="company.id" from="${roadtitan.core.Company.list()}" optionKey="id" required="" value="${appUserInstance?.company?.id}" class="many-to-one"/>
 
 </div>
+</sec:ifAnyGranted>
 
 %{--<div class="fieldcontain ${hasErrors(bean: appUserInstance, field: 'secUser', 'error')} required">
 	<label for="secUser">

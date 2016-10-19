@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 import roadtitan.security.AppUser
 import roadtitan.security.SecUser
 
-@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR", "ROLE_USER"])
+@Secured(["ROLE_ADMIN"])
 @Transactional
 class CompanyService {
 
