@@ -4,7 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
 
-@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR"])
+@Secured(["ROLE_ADMIN","ROLE_SUPERVISOR", "ROLE_USER"])
 @Transactional
 class SecService {
 
@@ -30,6 +30,11 @@ class SecService {
         return appUser
     }
 
+    def allCurrentCompanyUsers()
+    {
+        return AppUser.findAllByCompany(currentCompany())
+    }
+
     def currentSecUser()
     {
         def secUser = (SecUser) springSecurityService.currentUser
@@ -42,5 +47,10 @@ class SecService {
         def secUser = (SecUser) springSecurityService.currentUser
 
         return secUser.getAuthorities()
+    }
+
+    def getAppUser(Long id)
+    {
+        return AppUser.findById(id)
     }
 }

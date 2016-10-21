@@ -89,6 +89,10 @@ grails.project.dependency.resolution = {
         compile "org.grails.plugins:twitter-bootstrap:3.3.5"
         compile ":joda-time:1.5"
         compile ':spring-security-core:2.0-RC5'
+
+        compile ":jquery-ui:1.10.4"
+
         runtime ':twitter-bootstrap:3.3.5'
+
     }
 }

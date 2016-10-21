@@ -2,7 +2,9 @@ package roadtitan.location
 
 import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
+import roadtitan.core.Tracker
 import roadtitan.reservation.Reservation
+import roadtitan.security.AppUser
 
 class Trip {
 
@@ -11,7 +13,7 @@ class Trip {
     Integer tripLength
     boolean tripAuthorized
     static hasMany = [locations: Location]
-    static belongsTo = [reservation: Reservation]
+    static belongsTo = [reservation: Reservation, appUser: AppUser, tracker: Tracker]
 
     DateTime dateCreated
     DateTime lastUpdated

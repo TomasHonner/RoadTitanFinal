@@ -165,6 +165,11 @@ class BootStrap {
                     company: company2, appUser: ondraUser, reservedCar: car3, reservationStartLocation: "Hradce", reservationEndLocation: "JCU Ceske Budejovice"
             ).save(failOnError: true)
 
+            Reservation reservation4 = new Reservation(reservationName: "Test Approval", reservationDriverName: "Tomas Honner", reservationStartDate: new DateTime(2016,10,19,8,0,0),
+                    reservationEndDate: new DateTime(2016,10,19,16,0,0), reservationState: ReservationState.WAITING_FOR_APPROVAL, reservationWayOfFinancing: WayOfFinancing.UNIVERSITY_GRANT,
+                    company: company1, appUser: tomUser, reservedCar: car1, reservationStartLocation: "Hradce", reservationEndLocation: "Honolulu"
+            ).save(failOnError: true)
+
             // Locations
             Location startL = new Location(latitude: 48.929860, longitude: 14.363940, timestamp: new DateTime(2016,10,12,10,0,0)).save(failOnError: true) //48.929860,
             Location location1 = new Location(latitude: 48.949730, longitude: 14.351807, timestamp: new DateTime(2016,10,12,11,0,0)).save(failOnError: true) //48.949730, 14.351807
@@ -185,7 +190,8 @@ class BootStrap {
             Location r2Location10 = new Location(latitude: 49.986497, longitude: 14.396599, timestamp: new DateTime(2016,10,14,16,0,0)).save(failOnError: true)
 
             // Trip
-            Trip trip1 = new Trip(tripStartDateTime: new DateTime(2016,10,12,10,0,0), tripEndDateTime: new DateTime(2016,10,12,15,0,0), tripLength: 13, reservation: reservation1, tripAuthorized: true)
+            Trip trip1 = new Trip(tripStartDateTime: new DateTime(2016,10,12,10,0,0), tripEndDateTime: new DateTime(2016,10,12,15,0,0), tripLength: 13, reservation: reservation1, tripAuthorized: true,
+                    appUser: reservation1.appUser,tracker: car1.tracker)
             trip1.addToLocations(startL); trip1.addToLocations(endL); trip1.addToLocations(location1); trip1.addToLocations(location2); trip1.addToLocations(location3)
             trip1.addToLocations(location4)
 
@@ -193,7 +199,8 @@ class BootStrap {
             car1.tracker.logBook.addToTrips(trip1).save(failOnError: true)
 
 
-            Trip trip2 = new Trip(tripStartDateTime: new DateTime(2016,10,14,8,0,0), tripEndDateTime: new DateTime(2016,10,14,16,0,0), tripLength: 120, reservation: reservation2, tripAuthorized: true)
+            Trip trip2 = new Trip(tripStartDateTime: new DateTime(2016,10,14,8,0,0), tripEndDateTime: new DateTime(2016,10,14,16,0,0), tripLength: 120, reservation: reservation2, tripAuthorized: true,
+                    appUser: reservation2.appUser, tracker: car2.tracker)
             trip2.addToLocations(r2Location1); trip2.addToLocations(r2Location2); trip2.addToLocations(r2Location3); trip2.addToLocations(r2Location4); trip2.addToLocations(r2Location5)
             trip2.addToLocations(r2Location6); trip2.addToLocations(r2Location7); trip2.addToLocations(r2Location8); trip2.addToLocations(r2Location9); trip2.addToLocations(r2Location10)
 

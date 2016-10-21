@@ -43,7 +43,7 @@ class Reservation {
     }
 
     static mapping = {
-        table 'reservation'
+        table 'reservations'
         reservationName column: "reservation_name"
         reservationStartDate type: PersistentDateTime, column: "reservation_start_date"
         reservationEndDate type: PersistentDateTime, column: "reservation_end_date"

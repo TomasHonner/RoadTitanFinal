@@ -10,9 +10,15 @@
 <head>
     <meta name="layout" content="main"/>
     <title><g:message code="trip.title2"/></title>
+
+    <g:javascript>
+
+    </g:javascript>
+
 </head>
 
 <body>
+<g:render template="form" />
     <table class="table table-striped">
         <thead class="TableHeadingColor">
             <tr>

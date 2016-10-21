@@ -8,6 +8,8 @@
 * compiled file, but it's generally better to create a new file per style scope.
 *
 *= require bootstrap
+*= require jquery
+*= require jquery-ui
 *= require mobile
 *= require_self
 */
@@ -33,4 +35,14 @@
 {
     float: none;
     margin: auto;
+}
+
+.marginTop
+{
+    margin-t: 15px;
+}
+
+.marginBottom
+{
+    margin-bottom: 25px;
 }

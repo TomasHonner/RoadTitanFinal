@@ -10,6 +10,9 @@
 		<div class="nav" role="navigation">
 			<ul class="nav nav-tabs">
 				<li><g:link class="create" action="create"><g:message code="reservation.crud.new" /></g:link></li>
+                <sec:ifAnyGranted roles="ROLE_SUPERVISOR, ROLE_ADMIN">
+                    <li><g:link class="" action="forApproval"><g:message code="reservation.forApproval" /></g:link></li>
+                </sec:ifAnyGranted>
 			</ul>
 		</div>
 		<div>
