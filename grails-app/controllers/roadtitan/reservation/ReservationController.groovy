@@ -36,7 +36,7 @@ class ReservationController {
         Reservation reservation = Reservation.findById(Long.valueOf(params.resId))
         System.out.print(reservation)
         reservation.setReservationState(ReservationState.APPROVED)
-        reservation.save(failOnError: true, flush: true)
+        //reservation.save(failOnError: true, flush: true)
         redirect action: "forApproval", method: "GET"
     }
 
@@ -47,6 +47,34 @@ class ReservationController {
     def create() {
         def resCars = carService.getCurrentCars()
         respond new Reservation(params), model: [resCars: resCars]
+    }
+
+    @Transactional
+    def preSave(Reservation reservationInstance)
+    {
+        def check = reservationService.checkReservation(reservationInstance)
+        if (check[0] == true && check[1] == true && check[2] == true)
+        {
+            save(reservationInstance)
+        }
+        else
+        {
+            StringBuilder msg = new StringBuilder()
+            if (check[0] == false)
+            {
+                msg << "There is another reservation for that car on this time. \n"
+            }
+            if (check[1] == false)
+            {
+                msg << "The date is incorrect. You must choose future date.\n"
+            }
+            if (check[2] == false)
+            {
+                msg << "The date is incorrect. The start date must be before the end date. \n"
+            }
+
+            render view: "errors", model: [error: msg.toString()]
+        }
     }
 
     @Transactional
@@ -64,9 +92,7 @@ class ReservationController {
 
         reservationInstance.setCompany(secService.currentCompany())
         reservationInstance.setAppUser(secService.currentAppUser())
-        reservationService.checkReservation(reservationInstance)
-
-        reservationInstance.save flush:true
+        reservationInstance.save(failOnError: true)
 
         request.withFormat {
             form multipartForm {

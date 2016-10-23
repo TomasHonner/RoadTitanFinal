@@ -10,7 +10,6 @@ import org.joda.time.DateTime
 class ReservationService {
 
     def secService
-    def dataSource
 
     def serviceMethod() {
 
@@ -18,15 +17,46 @@ class ReservationService {
 
     def checkReservation(Reservation reservation)
     {
-        def companyId = secService.currentCompany().id
-        def carId  = reservation.reservedCar.id
-        def date = reservation.reservationStartDate
-        def params = [companyId, carId , date]
-        def sql = new Sql(dataSource)
-        def result = sql.firstRow('SELECT COUNT (*) as cont from reservations')
-        long count = result.cont
-        System.out.print(count)
-
-
+        boolean rObject, rDate, rTimeLine
+        rObject = checkReservationObject(reservation)
+        rDate = checkReservationDate(reservation.reservationStartDate, reservation.reservationEndDate)
+        rTimeLine = checkReservationTimeLine(reservation.reservationStartDate, reservation.reservationEndDate)
+        def result = [rObject, rDate,rTimeLine]
+        return result
     }
+
+    def checkReservationObject(Reservation reservation)
+    {
+        def rCompany = secService.currentCompany()
+        def rCar  = reservation.reservedCar
+        def sDate = reservation.reservationStartDate
+        def eDate = reservation.reservationEndDate
+
+        def listOfReservations = Reservation.find {
+            reservationStartDate <= sDate && reservationEndDate >= eDate && company == rCompany && reservedCar == rCar
+        }
+        System.out.print(listOfReservations)
+
+        if (listOfReservations == null)
+        {
+            return true
+        }
+        else return false
+    }
+
+    def checkReservationDate(DateTime from, DateTime to)
+    {
+        boolean r1 = from.isAfterNow()
+        boolean r2 = to.isAfterNow()
+
+        if (r1 && r2) return true
+        else return false
+    }
+
+    def checkReservationTimeLine(DateTime from, DateTime to)
+    {
+        if (to.isAfter(from)) return true
+        else return false
+    }
+
 }

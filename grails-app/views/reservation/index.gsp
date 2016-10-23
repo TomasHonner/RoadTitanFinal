@@ -33,6 +33,7 @@
 						<g:sortableColumn property="reservationRejectionReason" title="${message(code: 'reservation.rejectionReason')}" />
 						<g:sortableColumn property="reservationWayOfFinancing" title="${message(code: 'reservation.wayOfFinancing')}" />
 						<g:sortableColumn property="appUser" title="${message(code: 'user.title')}" />
+						<g:sortableColumn property="reservedCar" title="${message(code: 'reservation.reservedCar')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -48,6 +49,7 @@
 						<td>${fieldValue(bean: reservationInstance, field: "reservationRejectionReason")}</td>
 						<td>${fieldValue(bean: reservationInstance, field: "reservationWayOfFinancing")}</td>
 						<td>${fieldValue(bean: reservationInstance, field: "appUser")}</td>
+						<td>${fieldValue(bean: reservationInstance, field: "reservedCar")}</td>
 					</tr>
 				</g:each>
 				</tbody>
