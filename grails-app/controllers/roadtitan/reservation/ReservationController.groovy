@@ -31,12 +31,23 @@ class ReservationController {
     }
 
     @Secured(["ROLE_SUPERVISOR", "ROLE_ADMIN"])
-    def approved()
+    @Transactional
+    def approve()
     {
         Reservation reservation = Reservation.findById(Long.valueOf(params.resId))
-        System.out.print(reservation)
         reservation.setReservationState(ReservationState.APPROVED)
-        //reservation.save(failOnError: true, flush: true)
+        update(reservation)
+        redirect action: "forApproval", method: "GET"
+    }
+
+    @Secured(["ROLE_SUPERVISOR", "ROLE_ADMIN"])
+    @Transactional
+    def reject()
+    {
+        Reservation reservation = Reservation.findById(Long.valueOf(params.resId))
+        reservation.setReservationState(ReservationState.REJECTED)
+        reservation.setReservationRejectionReason(RejectionReason.UNSPECIFIED)
+        update(reservation)
         redirect action: "forApproval", method: "GET"
     }
 
@@ -104,7 +115,8 @@ class ReservationController {
     }
 
     def edit(Reservation reservationInstance) {
-        respond reservationInstance
+        def resCars = carService.getCurrentCars()
+        respond reservationInstance, model: [resCars: resCars]
     }
 
     @Transactional

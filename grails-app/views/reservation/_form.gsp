@@ -4,10 +4,10 @@
 	<label for="reservationName">
 		<g:message code="reservation.name" />
 	</label>
-	<g:textField name="reservationName" value="${reservationInstance?.reservationDriverName}"/>
+	<g:textField class="form-control" name="reservationName" value="${reservationInstance?.reservationDriverName}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationStartDate', 'error')} list-group-item  list-group-item-success list-group-item-heading">
+<div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationStartDate', 'error')} list-group-item">
 	<label for="reservationStartDate">
 		<g:message code="reservation.startDate" />
 	</label>
@@ -25,28 +25,28 @@
 	<label for="reservationStartLocation">
 		<g:message code="reservation.startLocation" />
 	</label>
-	<g:textField name="reservationStartLocation" value="${reservationInstance?.reservationStartLocation}"/>
+	<g:textField class="form-control" name="reservationStartLocation" value="${reservationInstance?.reservationStartLocation}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationEndLocation', 'error')} list-group-item">
 	<label for="reservationEndLocation">
 		<g:message code="reservation.endLocation" />
 	</label>
-	<g:textField name="reservationEndLocation" value="${reservationInstance?.reservationEndLocation}"/>
+	<g:textField class="form-control" name="reservationEndLocation" value="${reservationInstance?.reservationEndLocation}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationEndDate', 'error')} list-group-item">
 	<label for="reservedCar">
 		<g:message code="reservation.reservedCar" />
 	</label>
-	<g:select id="reservedCar" name="reservedCar.id" from="${resCars}" optionKey="id" value="${carInstance?.reservedCar?.id}"/>
+	<g:select id="reservedCar" class="form-control" name="reservedCar.id" from="${resCars}" optionKey="id" value="${carInstance?.reservedCar?.id}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationDriverName', 'error')} list-group-item">
 	<label for="reservationDriverName">
 		<g:message code="reservation.driverName" />
 	</label>
-	<g:textField name="reservationDriverName" value="${reservationInstance?.reservationDriverName}"/>
+	<g:textField class="form-control" name="reservationDriverName" value="${reservationInstance?.reservationDriverName}"/>
 
 </div>
 
@@ -54,21 +54,21 @@
 	<label for="reservationState">
 		<g:message code="reservation.state" />
 	</label>
-	<g:select name="reservationState" from="${enums.ReservationState?.values()}" keys="${enums.ReservationState.values()*.name()}" value="${reservationInstance?.reservationState?.name()}"  noSelection="['': '']"/>
+	<g:select class="form-control" name="reservationState" from="${enums.ReservationState?.values()}" keys="${enums.ReservationState.values()*.name()}" value="${reservationInstance?.reservationState?.name()}"  noSelection="['': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationRejectionReason', 'error')} list-group-item">
 	<label for="reservationRejectionReason">
 		<g:message code="reservation.rejectionReason" />
 	</label>
-	<g:select name="reservationRejectionReason" from="${enums.RejectionReason?.values()}" keys="${enums.RejectionReason.values()*.name()}" value="${reservationInstance?.reservationRejectionReason?.name()}"  noSelection="['': '']"/>
+	<g:select class="form-control" name="reservationRejectionReason" from="${enums.RejectionReason?.values()}" keys="${enums.RejectionReason.values()*.name()}" value="${reservationInstance?.reservationRejectionReason?.name()}"  noSelection="['': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationWayOfFinancing', 'error')} list-group-item">
 	<label for="reservationWayOfFinancing">
 		<g:message code="reservation.wayOfFinancing" />
 	</label>
-	<g:select name="reservationWayOfFinancing" from="${enums.WayOfFinancing?.values()}" keys="${enums.WayOfFinancing.values()*.name()}" value="${reservationInstance?.reservationWayOfFinancing?.name()}"  noSelection="['': '']"/>
+	<g:select class="form-control" name="reservationWayOfFinancing" from="${enums.WayOfFinancing?.values()}" keys="${enums.WayOfFinancing.values()*.name()}" value="${reservationInstance?.reservationWayOfFinancing?.name()}"  noSelection="['': '']"/>
 
 </div>
 
