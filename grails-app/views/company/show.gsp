@@ -14,7 +14,7 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="company.title" /></h1>
+			<h1 class="h1"><g:message code="company.title" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -22,28 +22,28 @@
 			
 				<g:if test="${companyInstance?.companyName}">
 				<li class="list-group-item list-group-item-heading list-group-item-success">
-					<span><g:message code="company.name" /></span
+					<span><h4 class="h4 list-group-item-heading"><g:message code="company.name" /></h4></span>
 						<span><g:fieldValue bean="${companyInstance}" field="companyName"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${companyInstance?.companyCode}">
 				<li class="list-group-item">
-					<span><g:message code="company.code"/></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="company.code"/></h4></span>
 						<span><g:fieldValue bean="${companyInstance}" field="companyCode"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${companyInstance?.companyAddress}">
 				<li class="list-group-item">
-					<span><g:message code="company.address" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="company.address" /></h4></span>
 						<span><g:fieldValue bean="${companyInstance}" field="companyAddress"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${companyInstance?.cars}">
 				<li class="list-group-item">
-					<span><g:message code="company.cars" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="company.cars" /></h4></span>
 						<g:each in="${companyInstance.cars}" var="c">
 						<span class="property-value" aria-labelledby="cars-label"><g:link controller="car" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
 						</g:each>
@@ -52,7 +52,7 @@
 			
 				<g:if test="${companyInstance?.users}">
 				<li class="list-group-item">
-					<span><g:message code="company.users" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="company.users" /></h4></span>
 						<g:each in="${companyInstance.users}" var="u">
 						<span class="property-value" aria-labelledby="users-label"><g:link controller="appUser" action="show" id="${u.id}">${u?.encodeAsHTML()}</g:link></span>
 						</g:each>

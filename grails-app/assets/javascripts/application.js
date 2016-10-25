@@ -6,11 +6,13 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
+//= require moment
 //= require_tree .
 //= require_self
 //= require jquery-ui
 //= require maplace
 //= require bootstrap
+//= require datepicker
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {

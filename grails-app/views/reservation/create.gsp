@@ -3,6 +3,14 @@
 	<head>
 		<meta name="layout" content="main">
 		<title><g:message code="reservation.crud.new" /></title>
+
+		<g:javascript>
+			$(function () {
+				$('#datetimepicker1').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
+				$('#datetimepicker2').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
+			});
+		</g:javascript>
+
 	</head>
 	<body>
 		<div class="nav" role="navigation">
@@ -11,7 +19,7 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="reservation.crud.new" /></h1>
+			<h1 class="h1"><g:message code="reservation.crud.new" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

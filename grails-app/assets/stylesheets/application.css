@@ -10,9 +10,15 @@
 *= require bootstrap
 *= require jquery
 *= require jquery-ui
+*= require datepicker
 *= require mobile
 *= require_self
 */
+
+span
+{
+    margin-right: 15px;
+}
 
 .fRight
 {
@@ -42,6 +48,11 @@
     margin-t: 15px;
 }
 
+.paddingTop
+{
+    padding-top: 15px;
+}
+
 .marginBottom
 {
     margin-bottom: 25px;
@@ -51,3 +62,8 @@
 {
     color: red;
 }
+
+/*.row
+{
+    border: 5px red solid;
+}*/

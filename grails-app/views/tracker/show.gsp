@@ -14,35 +14,35 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="tracker.title" /></h1>
+			<h1 class="h1"><g:message code="tracker.title" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ul class="list-group">
 				<g:if test="${trackerInstance?.trackerNumber}">
 				<li class="list-group-item list-group-item-heading list-group-item-success">
-					<span><g:message code="tracker.number" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="tracker.number" /></h4></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerNumber"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${trackerInstance?.trackerName}">
 				<li class="list-group-item">
-					<span><g:message code="tracker.name" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="tracker.name" /></h4></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerName"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${trackerInstance?.trackerGsmMode}">
 				<li class="list-group-item">
-					<span><g:message code="tracker.gsmMode" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="tracker.gsmMode" /></h4></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerGsmMode"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${trackerInstance?.trackerImei}">
 				<li class="list-group-item">
-					<span><g:message code="tracker.imei" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="tracker.imei" /></h4></span>
 						<span><g:fieldValue bean="${trackerInstance}" field="trackerImei"/></span>
 				</li>
 				</g:if>

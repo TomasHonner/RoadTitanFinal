@@ -24,7 +24,8 @@ class CarController {
     }
 
     def create() {
-        respond new Car(params)
+        def trackers = Tracker.findAllByTrackerAssigned(false)
+        respond new Car(params), model: [trackers: trackers]
     }
 
     @Transactional
@@ -53,7 +54,9 @@ class CarController {
     }
 
     def edit(Car carInstance) {
-        respond carInstance
+        def trackers = Tracker.findAllByTrackerAssigned(false)
+        trackers.add(carInstance.getTracker())
+        respond carInstance, model: [trackers: trackers]
     }
 
     @Transactional

@@ -22,67 +22,63 @@
 
 				<g:if test="${reservationInstance?.reservationName}">
 					<li class="list-group-item list-group-item-success list-group-item-heading">
-						<span><g:message code="reservation.name" /></span>
+						<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.name" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationName"/></span>
 					</li>
 				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationStartDate}">
 				<li class="list-group-item">
-					<span><g:message code="reservation.startDate" /></span>
-					
+					<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.startDate" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationStartDate"/></span>
-					
 				</li>
 				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationEndDate}">
 				<li class="list-group-item">
-					<span><g:message code="reservation.endDate" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.endDate" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationEndDate"/></span>
 				</li>
 				</g:if>
 
 				<g:if test="${reservationInstance?.reservationStartLocation}">
 					<li class="list-group-item">
-						<span><g:message code="reservation.startLocation" /></span>
-
+						<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.startLocation" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationStartLocation"/></span>
-
 					</li>
 				</g:if>
 
 				<g:if test="${reservationInstance?.reservationEndLocation}">
 					<li class="list-group-item">
-						<span><g:message code="reservation.endLocation" /></span>
+						<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.endLocation" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationEndLocation"/></span>
 					</li>
 				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationDriverName}">
 				<li class="list-group-item">
-					<span><g:message code="reservation.driverName" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.driverName" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationDriverName"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationState}">
 				<li class="list-group-item">
-					<span><g:message code="reservation.state" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.state" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationState"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationRejectionReason}">
 				<li class="list-group-item">
-					<span><g:message code="reservation.rejectionReason" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.rejectionReason" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationRejectionReason"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${reservationInstance?.reservationWayOfFinancing}">
 				<li class="list-group-item">
-					<span><g:message code="reservation.wayOfFinancing" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="reservation.wayOfFinancing" /></h4></span>
 						<span><g:fieldValue bean="${reservationInstance}" field="reservationWayOfFinancing"/></span>
 				</li>
 				</g:if>

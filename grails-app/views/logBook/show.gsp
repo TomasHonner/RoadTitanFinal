@@ -10,17 +10,19 @@
 <head>
     <meta name="layout" content="main"/>
     <title><g:message code="trip.title2"/></title>
-
     <g:javascript>
-
+        $(function () {
+            $("#picker1").datetimepicker({format: 'YYYY-MM-DD HH:mm'})
+            $("#picker2").datetimepicker({format: 'YYYY-MM-DD HH:mm'})
+        })
     </g:javascript>
-
 </head>
 
 <body>
 <g:render template="form" />
-    <table class="table table-striped">
-        <thead class="TableHeadingColor">
+<div>
+    <table class="table table-condensed table-hover">
+        <thead>
             <tr>
                 <th><g:message code="reservation.name"/></th>
                 <th><g:message code="reservation.driverName"/></th>
@@ -43,7 +45,6 @@
             </g:each>
         </tbody>
     </table>
-    <div>
-    </div>
+</div>
 </body>
 </html>

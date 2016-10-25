@@ -14,7 +14,7 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="car.title" /></h1>
+			<h1 class="h1"><g:message code="car.title" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -22,35 +22,35 @@
 			
 				<g:if test="${carInstance?.carName}">
 				<li class="list-group-item list-group-item-heading list-group-item-success">
-					<span><g:message code="car.name" /></span
+					<span><h4 class="h4 list-group-item-heading"><g:message code="car.name" /></h4></span
 						<span><g:fieldValue bean="${carInstance}" field="carName"/></span
 				</li>
 				</g:if>
 			
 				<g:if test="${carInstance?.carRegistrationNumber}">
 				<li class="list-group-item">
-					<span><g:message code="car.registrationNumber" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="car.registrationNumber" /></h4></span>
 						<span><g:fieldValue bean="${carInstance}" field="carRegistrationNumber"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${carInstance?.carCarType}">
 				<li class="list-group-item">
-					<span><g:message code="car.carType" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="car.carType" /></h4></span>
 						<span class="property-value" aria-labelledby="carCarType-label"><g:fieldValue bean="${carInstance}" field="carCarType"/></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${carInstance?.company}">
 				<li class="list-group-item">
-					<span><g:message code="company.title" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="company.title" /></h4></span>
 						<span><g:link controller="company" action="show" id="${carInstance?.company?.id}">${carInstance?.company?.encodeAsHTML()}</g:link></span>
 				</li>
 				</g:if>
 			
 				<g:if test="${carInstance?.tracker}">
 				<li class="list-group-item">
-					<span><g:message code="car.tracker" /></span>
+					<span><h4 class="h4 list-group-item-heading"><g:message code="car.tracker" /></h4></span>
 						<span><g:link controller="tracker" action="show" id="${carInstance?.tracker?.id}">${carInstance?.tracker?.encodeAsHTML()}</g:link></span>
 				</li>
 				</g:if>

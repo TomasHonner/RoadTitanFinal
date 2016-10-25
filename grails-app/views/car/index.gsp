@@ -13,12 +13,12 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="car.title2" /></h1>
+			<h1 class="h1"><g:message code="car.title2" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message">${flash.message}</div>
 			</g:if>
-			<table class="table table-striped">
-                <thead class="TableHeadingColor">
+			<table class="table table-condensed table-hover">
+                <thead>
                         <tr>
                             <g:sortableColumn property="carName" title="${message(code: 'car.name')}" />
                             <g:sortableColumn property="carRegistrationNumber" title="${message(code: 'car.registrationNumber')}" />

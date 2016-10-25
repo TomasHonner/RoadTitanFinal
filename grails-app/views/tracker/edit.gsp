@@ -13,7 +13,7 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="tracker.crud.edit" /></h1>
+			<h1 class="h1"><g:message code="tracker.crud.edit" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

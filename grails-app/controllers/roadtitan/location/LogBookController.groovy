@@ -74,8 +74,8 @@ class LogBookController {
             session["userId"] = params.user
             userId = Long.valueOf(session["userId"])
         }
-        DateTime dateFrom = DateTimeFormat.forPattern("yyyy-MM-dd").parseDateTime(params.dateFrom)
-        DateTime dateTo = DateTimeFormat.forPattern("yyyy-MM-dd").parseDateTime(params.dateTo)
+        DateTime dateFrom = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").parseDateTime(params.dateFrom)
+        DateTime dateTo = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").parseDateTime(params.dateTo)
         def trips
         if(SpringSecurityUtils.ifAllGranted("ROLE_SUPERVISOR"))
         {

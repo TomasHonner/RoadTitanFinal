@@ -16,12 +16,12 @@
 			</ul>
 		</div>
 		<div>
-			<h1><g:message code="reservation.title2" /></h1>
+			<h1 class="h1"><g:message code="reservation.title2" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table class="table table-striped">
-			<thead class="TableHeadingColor">
+			<table class="table table-condensed table-hover">
+			<thead>
 					<tr>
 						<g:sortableColumn property="reservationName" title="${message(code:'reservation.name')}" />
 						<g:sortableColumn property="reservationStartDate" title="${message(code: 'reservation.startDate')}" />

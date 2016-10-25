@@ -17,29 +17,12 @@
 	</head>
 	<body>
 	<div id="header" >
-		<div class="row">
-			<div id="logo" class="col-lg-6 col-lg-offset-1">
-				Tady bude logo
-			</div>
-			<div id="loginlogout" class="fRight col-lg-2 col-lg-offset-3 media-right">
-				<sec:ifNotLoggedIn>
-					<form class="form-inline" name="login" method="POST" action="${createLink(controller:'login') }">
-						<button type="submit" class="btn btn-sm btn-warning"><g:message code="app.login"/></button>
-					</form>
-				</sec:ifNotLoggedIn>
-				<sec:ifLoggedIn>
-					<form class="form-inline" name="logout" method="POST" action="${createLink(controller:'logout') }">
-						<g:message code="app.loggedUser"/> <sec:loggedInUserInfo field="username"/>
-						<button type="submit" class="btn btn-danger btn-sm mLeft"><g:message code="app.logout"/></button>
-					</form>
-				</sec:ifLoggedIn>
-			</div>
-		</div>
-	</div>
-	<div id="menu">
-		<div class="row center">
-			<div class="col-lg-5 col-lg-offset-4">
-				<ul class="nav nav-tabs">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<span class="navbar-brand"><g:message code="app.title"/></span>
+				</div>
+				<ul class="nav navbar-nav">
 					<sec:ifAnyGranted roles="ROLE_USER, ROLE_SUPERVISOR, ROLE_ADMIN">
 						<li role="presentation"><g:link controller="logBook"><g:message code="logbook.title2"/></g:link></li>
 						<li role="presentation"><g:link controller="reservation"><g:message code="reservation.title2"/></g:link></li>
@@ -53,13 +36,27 @@
 						</sec:ifAllGranted>
 					</sec:ifAnyGranted>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<sec:ifNotLoggedIn>
+						<li role="presentation"><span class="glyphicon glyphicon-log-in"></span><g:link controller="login"><g:message code="app.login"/></g:link></li>
+					</sec:ifNotLoggedIn>
+					<sec:ifLoggedIn>
+						%{--<li role="presentation"><span class="glyphicon glyphicon-log-out"><g:link controller="logout"><g:message code="app.logout"/></g:link></span></li>--}%
+						<li role="presentation" style="padding-right: 10px">
+							<g:message code="app.loggedUser"/> <sec:loggedInUserInfo field="username"/>
+						</li>
+						<li role="presentation"><span class="glyphicon glyphicon-log-out"></span><form name="logout" method="post" action="${createLink(controller:'logout') }">
+							<button type="submit" class="btn"><g:message code="app.logout"/></button>
+						</form></li>
+					</sec:ifLoggedIn>
+				</ul>
 			</div>
-		</div>
+		</nav>
 	</div>
-	<div class="col-lg-10 col-lg-offset-1">
-		<g:layoutBody/>
+	<div class="row center col-lg-10 col-lg-offset-1">
+			<g:layoutBody/>
 	</div>
-	<div class="footer" role="contentinfo">
+	<div class="footer row" role="contentinfo">
 
 	</div>
 	</body>

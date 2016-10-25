@@ -3,31 +3,31 @@
 
 
 <div class="fieldcontain ${hasErrors(bean: trackerInstance, field: 'trackerNumber', 'error')} list-group-item  list-group-item-success list-group-item-heading ">
-	<label for="trackerNumber">
+	<label for="trackerNumber" class="h4 control-label">
 		<g:message code="tracker.number" />
 	</label>
-	<g:field name="trackerNumber" type="number" value="${trackerInstance.trackerNumber}"/>
+	<g:field class="form-control" name="trackerNumber" type="number" value="${trackerInstance.trackerNumber}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: trackerInstance, field: 'trackerName', 'error')} list-group-item">
-	<label for="trackerName">
+	<label for="trackerName" class="h4 control-label">
 		<g:message code="tracker.name" />
 	</label>
-	<g:textField name="trackerName" value="${trackerInstance?.trackerName}"/>
+	<g:textField class="form-control" name="trackerName" value="${trackerInstance?.trackerName}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: trackerInstance, field: 'trackerGsmMode', 'error')} list-group-item">
-	<label for="trackerGsmMode">
+	<label for="trackerGsmMode" class="h4 control-label">
 		<g:message code="tracker.gsmMode" />
 	</label>
-	<g:select name="trackerGsmMode" from="${enums.GsmMode?.values()}" keys="${enums.GsmMode.values()*.name()}" value="${trackerInstance?.trackerGsmMode?.name()}"  noSelection="['': '']"/>
+	<g:select class="form-control" name="trackerGsmMode" from="${enums.GsmMode?.values()}" keys="${enums.GsmMode.values()*.name()}" value="${trackerInstance?.trackerGsmMode?.name()}"  noSelection="['': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: trackerInstance, field: 'trackerImei', 'error')} list-group-item">
-	<label for="trackerImei">
+	<label for="trackerImei" class="h4 control-label">
 		<g:message code="tracker.imei" />
 	</label>
-	<g:textField name="trackerImei" value="${trackerInstance?.trackerImei}"/>
+	<g:textField class="form-control" name="trackerImei" value="${trackerInstance?.trackerImei}"/>
 </div>
 
 %{--

@@ -3,8 +3,8 @@ package roadtitan.reservation
 import enums.RejectionReason
 import enums.ReservationState
 import grails.plugin.springsecurity.annotation.Secured
-import roadtitan.core.Car
-
+import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormat
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -63,6 +63,12 @@ class ReservationController {
     @Transactional
     def preSave(Reservation reservationInstance)
     {
+        /*DateTime dtFrom = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").parseDateTime(params.reservationStartDate)
+        DateTime dtTo = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").parseDateTime(params.reservationEndDate)
+
+        reservationInstance.setReservationStartDate(dtFrom)
+        reservationInstance.setReservationEndDate(dtTo)*/
+
         def check = reservationService.checkReservation(reservationInstance)
         if (check[0] == true && check[1] == true && check[2] == true)
         {
