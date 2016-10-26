@@ -38,16 +38,16 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<sec:ifNotLoggedIn>
-						<li role="presentation"><span class="glyphicon glyphicon-log-in"></span><g:link controller="login"><g:message code="app.login"/></g:link></li>
+						<li role="presentation">
+							<g:link controller="login"><span class="glyphicon glyphicon-log-in"></span><g:message code="app.login"/></g:link></li>
 					</sec:ifNotLoggedIn>
 					<sec:ifLoggedIn>
-						%{--<li role="presentation"><span class="glyphicon glyphicon-log-out"><g:link controller="logout"><g:message code="app.logout"/></g:link></span></li>--}%
-						<li role="presentation" style="padding-right: 10px">
-							<g:message code="app.loggedUser"/> <sec:loggedInUserInfo field="username"/>
+						<li>
+							<a href="#"><span><g:message code="app.loggedUser"/></span><sec:loggedInUserInfo field="username"/></a>
 						</li>
-						<li role="presentation"><span class="glyphicon glyphicon-log-out"></span><form name="logout" method="post" action="${createLink(controller:'logout') }">
-							<button type="submit" class="btn"><g:message code="app.logout"/></button>
-						</form></li>
+						<li role="presentation">
+							<g:link controller="logout"><span style="color: red"><span class="glyphicon glyphicon-log-out"></span><g:message code="app.logout"/></span></g:link>
+						</li>
 					</sec:ifLoggedIn>
 				</ul>
 			</div>

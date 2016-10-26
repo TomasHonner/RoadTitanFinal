@@ -3,6 +3,7 @@ package roadtitan.map
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+import roadtitan.location.Trip
 
 @Secured(["ROLE_ADMIN","ROLE_SUPERVISOR","ROLE_USER"])
 @Transactional
@@ -19,7 +20,8 @@ class MapController {
     def tripMap()
     {
         Long tripId = Long.valueOf(params.tripId)
-        return [tripId: tripId]
+        def trip = Trip.findById(tripId)
+        return [tripId: tripId, trip: trip]
     }
 
     def carMap()

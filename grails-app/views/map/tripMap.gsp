@@ -75,7 +75,71 @@
 </head>
 
 <body>
+<h1 class="h1"><g:message code="trip.details"/></h1>
+%{-- trip length--}%
+%{-- driver wayoffinancing --}%
+%{-- car--}%
+<div class="row list-group">
+    <span class="col-lg-2 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="trip.authorized"/>
+        </h4>
+        <span>
+            <g:formatBoolean boolean="${trip.getTripAuthorized()}" true="Yes" false="No"/>
+        </span>
+    </span>
+    <span class="col-lg-3 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="trip.startDate"/>
+        </h4>
+        <span>
+            ${trip.getTripStartDateTime()}
+        </span>
+    </span>
+    <span class="col-lg-3 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="trip.endDate"/>
+        </h4>
+        <span>
+            ${trip.getTripEndDateTime()}
+        </span>
+    </span>
+    <span class="col-lg-3 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="reservation.driverName"/>
+        </h4>
+        <span>
+            ${trip.getReservation().getReservationDriverName()}
+        </span>
+    </span>
+</div>
 <div class="row">
+    <span class="col-lg-2 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="trip.length"/>
+        </h4>
+        <span>
+            ${trip.getTripLength()}
+        </span>
+    </span>
+    <span class="col-lg-3 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="reservation.wayOfFinancing"/>
+        </h4>
+        <span>
+            ${trip.getReservation().getReservationWayOfFinancing()}
+        </span>
+    </span>
+    <span class="col-lg-3 list-group-item">
+        <h4 class="h4 list-group-item-heading">
+            <g:message code="car.name"/>
+        </h4>
+        <span>
+            ${trip.getReservation().getReservedCar().carName}
+        </span>
+    </span>
+</div>
+<div class="row paddingTop">
     <div id="mapControls"></div>
     <div id="gmap" class="map center"></div>
 </div>

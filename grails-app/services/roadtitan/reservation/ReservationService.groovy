@@ -33,12 +33,14 @@ class ReservationService {
         def sDate = reservation.reservationStartDate
         def eDate = reservation.reservationEndDate
 
-        def reservationOvelap1 = Reservation.countByCompanyAndReservedCarAndReservationStartDateGreaterThanAndReservationStartDateLessThanEqualsAndReservationEndDateGreaterThanEquals(rCompany, rCar, sDate, eDate, eDate)
+        /*def reservationOvelap1 = Reservation.countByCompanyAndReservedCarAndReservationStartDateGreaterThanAndReservationStartDateLessThanEqualsAndReservationEndDateGreaterThanEquals(rCompany, rCar, sDate, eDate, eDate)
         def reservationOvelap2 = Reservation.countByCompanyAndReservedCarAndReservationStartDateLessThanEqualsAndReservationEndDateLessThan(rCompany, rCar, sDate, eDate)
         def reservationOvelap3 = Reservation.countByCompanyAndReservedCarAndReservationStartDateGreaterThanAndReservationEndDateLessThan(rCompany, rCar, sDate, eDate)
-        def reservationOvelap4 = Reservation.countByCompanyAndReservedCarAndReservationStartDateLessThanEqualsAndReservationEndDateGreaterThanEquals(rCompany, rCar, sDate, eDate)
+        def reservationOvelap4 = Reservation.countByCompanyAndReservedCarAndReservationStartDateLessThanEqualsAndReservationEndDateGreaterThanEquals(rCompany, rCar, sDate, eDate)*/
 
-        System.out.print(reservationOvelap1+" xxxxxx "+reservationOvelap2+" xxxxxxx "+reservationOvelap3+" xxxxxx "+reservationOvelap4)
+        def reservationOvelap1 = Reservation.countByCompanyAndReservedCarAndReservationEndDateGreaterThanEqualsAndReservationStartDateLessThanEquals(rCompany, rCar, sDate, eDate)
+
+        System.out.print("xxxxxxxxxxxxxxx "+reservationOvelap1)
 
         /*def listOfReservations = Reservation.find {
             reservationStartDate <= sDate && reservationEndDate >= eDate && company == rCompany && reservedCar == rCar
@@ -48,7 +50,7 @@ class ReservationService {
             overlappingRow.date_from < simData.date_from
         }*/
 
-        if (reservationOvelap1 == 0 && reservationOvelap2 == 0 && reservationOvelap3 == 0 && reservationOvelap4 == 0)
+        if (reservationOvelap1 == 0)
         {
             return true
         }

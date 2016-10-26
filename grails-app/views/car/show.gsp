@@ -22,7 +22,7 @@
 			
 				<g:if test="${carInstance?.carName}">
 				<li class="list-group-item list-group-item-heading list-group-item-success">
-					<span><h4 class="h4 list-group-item-heading"><g:message code="car.name" /></h4></span
+					<span><h4 class="h4 list-group-item-heading"><g:message code="car.name" /></h4></span>
 						<span><g:fieldValue bean="${carInstance}" field="carName"/></span
 				</li>
 				</g:if>
