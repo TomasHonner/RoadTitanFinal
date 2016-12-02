@@ -88,6 +88,7 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        //grails.server.port.https = 8082
     }
     production {
         grails.logging.jul.usebridge = false
@@ -133,3 +134,18 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 ]
 grails.plugin.springsecurity.logout.postOnly = false
 
+// Grails mail setting
+grails {
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "honnertomas@gmail.com"
+        password = "yourpassword"
+        props = ["mail.smtp.auth":"true",
+                 "mail.smtp.socketFactory.port":"465",
+                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback":"false"]
+    }
+}
+grails.mail.default.from = "roadtitan@roadtitan.com"
+grails.mail.disabled = true

@@ -38,9 +38,7 @@ class ReservationService {
         def reservationOvelap3 = Reservation.countByCompanyAndReservedCarAndReservationStartDateGreaterThanAndReservationEndDateLessThan(rCompany, rCar, sDate, eDate)
         def reservationOvelap4 = Reservation.countByCompanyAndReservedCarAndReservationStartDateLessThanEqualsAndReservationEndDateGreaterThanEquals(rCompany, rCar, sDate, eDate)*/
 
-        def reservationOvelap1 = Reservation.countByCompanyAndReservedCarAndReservationEndDateGreaterThanEqualsAndReservationStartDateLessThanEquals(rCompany, rCar, sDate, eDate)
-
-        System.out.print("xxxxxxxxxxxxxxx "+reservationOvelap1)
+        def reservationOvelap = Reservation.countByCompanyAndReservedCarAndReservationEndDateGreaterThanEqualsAndReservationStartDateLessThanEquals(rCompany, rCar, sDate, eDate)
 
         /*def listOfReservations = Reservation.find {
             reservationStartDate <= sDate && reservationEndDate >= eDate && company == rCompany && reservedCar == rCar
@@ -50,7 +48,7 @@ class ReservationService {
             overlappingRow.date_from < simData.date_from
         }*/
 
-        if (reservationOvelap1 == 0)
+        if (reservationOvelap == 0)
         {
             return true
         }
@@ -70,5 +68,11 @@ class ReservationService {
     {
         if (to.isAfter(from)) return true
         else return false
+    }
+
+    def checkReservationDate(DateTime from)
+    {
+        boolean res = from.isBeforeNow()
+        return res
     }
 }

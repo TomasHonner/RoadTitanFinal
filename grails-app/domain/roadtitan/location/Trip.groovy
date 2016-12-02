@@ -6,7 +6,7 @@ import roadtitan.core.Tracker
 import roadtitan.reservation.Reservation
 import roadtitan.security.AppUser
 
-class Trip {
+class  Trip {
 
     DateTime tripStartDateTime
     DateTime tripEndDateTime

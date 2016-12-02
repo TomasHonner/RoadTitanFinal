@@ -2,6 +2,7 @@ package roadtitan.reservation
 
 import enums.RejectionReason
 import enums.ReservationState
+import enums.WayOfFinancing
 import grails.plugin.springsecurity.annotation.Secured
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
@@ -69,6 +70,16 @@ class ReservationController {
         reservationInstance.setReservationStartDate(dtFrom)
         reservationInstance.setReservationEndDate(dtTo)*/
 
+        if (reservationInstance.getReservationState() == null)
+        {
+            reservationInstance.setReservationState(ReservationState.WAITING_FOR_APPROVAL)
+        }
+
+        if (reservationInstance.getReservationWayOfFinancing() == null)
+        {
+            reservationInstance.setReservationWayOfFinancing(WayOfFinancing.UNSPECIFIED)
+        }
+
         def check = reservationService.checkReservation(reservationInstance)
         if (check[0] == true && check[1] == true && check[2] == true)
         {
@@ -105,7 +116,6 @@ class ReservationController {
             respond reservationInstance.errors, view:'create'
             return
         }
-
 
         reservationInstance.setCompany(secService.currentCompany())
         reservationInstance.setAppUser(secService.currentAppUser())

@@ -92,6 +92,8 @@ grails.project.dependency.resolution = {
 
         compile ":jquery-ui:1.10.4"
 
+        compile "org.grails.plugins:mail:1.0.7"
+
         runtime ':twitter-bootstrap:3.3.5'
 
     }
