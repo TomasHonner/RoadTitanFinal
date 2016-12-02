@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="RoadTitanFinal dev">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="road_titan_final">
+      <ObjectId>16395</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2016-12-02.11:14:34.279</IntrospectionTimestamp>
+      <IntrospectionStateNumber>41026</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="hibernate_sequence">
+      <ObjectId>68842</ObjectId>
+      <StateNumber>41026</StateNumber>
+    </sequence>
+    <table id="10" parent="3" name="app_users">
+      <ObjectId>68667</ObjectId>
+      <StateNumber>41023</StateNumber>
+    </table>
+    <table id="11" parent="3" name="cars">
+      <ObjectId>68675</ObjectId>
+      <StateNumber>41019</StateNumber>
+    </table>
+    <table id="12" parent="3" name="companies">
+      <ObjectId>68683</ObjectId>
+      <StateNumber>41022</StateNumber>
+    </table>
+    <table id="13" parent="3" name="locations">
+      <ObjectId>68691</ObjectId>
+      <StateNumber>41013</StateNumber>
+    </table>
+    <table id="14" parent="3" name="log_book">
+      <ObjectId>24041</ObjectId>
+      <StateNumber>5050</StateNumber>
+    </table>
+    <table id="15" parent="3" name="logbooks">
+      <ObjectId>68696</ObjectId>
+      <StateNumber>41016</StateNumber>
+    </table>
+    <table id="16" parent="3" name="logbooks_trips">
+      <ObjectId>68701</ObjectId>
+      <StateNumber>41016</StateNumber>
+    </table>
+    <table id="17" parent="3" name="reservation">
+      <ObjectId>53576</ObjectId>
+      <StateNumber>28168</StateNumber>
+    </table>
+    <table id="18" parent="3" name="reservations">
+      <ObjectId>68704</ObjectId>
+      <StateNumber>41024</StateNumber>
+    </table>
+    <table id="19" parent="3" name="sec_role">
+      <ObjectId>68712</ObjectId>
+      <StateNumber>41021</StateNumber>
+    </table>
+    <table id="20" parent="3" name="sec_user">
+      <ObjectId>68717</ObjectId>
+      <StateNumber>41020</StateNumber>
+    </table>
+    <table id="21" parent="3" name="sec_user_sec_role">
+      <ObjectId>68725</ObjectId>
+      <StateNumber>41021</StateNumber>
+    </table>
+    <table id="22" parent="3" name="trackers">
+      <ObjectId>68730</ObjectId>
+      <StateNumber>41025</StateNumber>
+    </table>
+    <table id="23" parent="3" name="trips">
+      <ObjectId>68738</ObjectId>
+      <StateNumber>41025</StateNumber>
+    </table>
+    <column id="24" parent="10" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="25" parent="10" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="26" parent="10" name="app_user_address">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="27" parent="10" name="app_user_email">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="28" parent="10" name="app_user_name">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="29" parent="10" name="app_user_password">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="30" parent="10" name="company_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="31" parent="10" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="32" parent="10" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <column id="33" parent="10" name="sec_user_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40990</StateNumber>
+    </column>
+    <index id="34" parent="10" name="app_users_pkey">
+      <ObjectId>68673</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="35" parent="10" name="uk_6d6rupx6uj4uwj73y5lqxm8h6">
+      <ObjectId>68743</ObjectId>
+      <ColNames>app_user_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="10" name="app_users_pkey">
+      <ObjectId>68674</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>app_users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="37" parent="10" name="uk_6d6rupx6uj4uwj73y5lqxm8h6">
+      <ObjectId>68744</ObjectId>
+      <ColNames>app_user_name</ColNames>
+      <UnderlyingIndexName>uk_6d6rupx6uj4uwj73y5lqxm8h6</UnderlyingIndexName>
+    </key>
+    <foreign-key id="38" parent="10" name="fk_6p82nq6vm9cjrtg2mpanleldv">
+      <ObjectId>68757</ObjectId>
+      <ColNames>company_id</ColNames>
+      <RefTableName>companies</RefTableName>
+      <RefKeyName>companies_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="39" parent="10" name="fk_a4pcb7m0pmgn52d3i3fy2pot6">
+      <ObjectId>68762</ObjectId>
+      <ColNames>sec_user_id</ColNames>
+      <RefTableName>sec_user</RefTableName>
+      <RefKeyName>sec_user_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="40" parent="11" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="41" parent="11" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="42" parent="11" name="car_type">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="43" parent="11" name="car_name">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="44" parent="11" name="car_registration_number">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="45" parent="11" name="company_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="46" parent="11" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="47" parent="11" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <column id="48" parent="11" name="tracker_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40991</StateNumber>
+    </column>
+    <index id="49" parent="11" name="cars_pkey">
+      <ObjectId>68681</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="50" parent="11" name="uk_igb1mrxvjge467y1miii74c9w">
+      <ObjectId>68745</ObjectId>
+      <ColNames>car_registration_number</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="11" name="cars_pkey">
+      <ObjectId>68682</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>cars_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="52" parent="11" name="uk_igb1mrxvjge467y1miii74c9w">
+      <ObjectId>68746</ObjectId>
+      <ColNames>car_registration_number</ColNames>
+      <UnderlyingIndexName>uk_igb1mrxvjge467y1miii74c9w</UnderlyingIndexName>
+    </key>
+    <foreign-key id="53" parent="11" name="fk_8rwbrg3yo01p7gsc8em1m6txq">
+      <ObjectId>68767</ObjectId>
+      <ColNames>company_id</ColNames>
+      <RefTableName>companies</RefTableName>
+      <RefKeyName>companies_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="54" parent="11" name="fk_jtjtrkei21u0slocrpd3rvlon">
+      <ObjectId>68772</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <RefTableName>trackers</RefTableName>
+      <RefKeyName>trackers_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="55" parent="12" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <column id="56" parent="12" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <column id="57" parent="12" name="company_address">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <column id="58" parent="12" name="company_code">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <column id="59" parent="12" name="company_name">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <column id="60" parent="12" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <column id="61" parent="12" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40992</StateNumber>
+    </column>
+    <index id="62" parent="12" name="companies_pkey">
+      <ObjectId>68689</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="12" name="companies_pkey">
+      <ObjectId>68690</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>companies_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="64" parent="13" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="65" parent="13" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="66" parent="13" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="67" parent="13" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="68" parent="13" name="latitude">
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="69" parent="13" name="longitude">
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="70" parent="13" name="timestamp">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <column id="71" parent="13" name="trip_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40993</StateNumber>
+    </column>
+    <index id="72" parent="13" name="locations_pkey">
+      <ObjectId>68694</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="73" parent="13" name="locations_pkey">
+      <ObjectId>68695</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>locations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="74" parent="13" name="fk_gncc1gccgn1p2dl5vvdsp4x2u">
+      <ObjectId>68777</ObjectId>
+      <ColNames>trip_id</ColNames>
+      <RefTableName>trips</RefTableName>
+      <RefKeyName>trips_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="75" parent="14" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5024</StateNumber>
+    </column>
+    <column id="76" parent="14" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5024</StateNumber>
+    </column>
+    <column id="77" parent="14" name="tracker_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>5024</StateNumber>
+    </column>
+    <index id="78" parent="14" name="log_book_pkey">
+      <ObjectId>24044</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="79" parent="14" name="uk_paymvp2u5wp8cqv40ubl2h5ng">
+      <ObjectId>24089</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="14" name="log_book_pkey">
+      <ObjectId>24045</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>log_book_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="81" parent="14" name="uk_paymvp2u5wp8cqv40ubl2h5ng">
+      <ObjectId>24090</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <UnderlyingIndexName>uk_paymvp2u5wp8cqv40ubl2h5ng</UnderlyingIndexName>
+    </key>
+    <column id="82" parent="15" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40994</StateNumber>
+    </column>
+    <column id="83" parent="15" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40994</StateNumber>
+    </column>
+    <column id="84" parent="15" name="tracker_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40994</StateNumber>
+    </column>
+    <index id="85" parent="15" name="logbooks_pkey">
+      <ObjectId>68699</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="86" parent="15" name="uk_8jqeq0se4r44untcy0jie5q8w">
+      <ObjectId>68747</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="87" parent="15" name="logbooks_pkey">
+      <ObjectId>68700</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>logbooks_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="88" parent="15" name="uk_8jqeq0se4r44untcy0jie5q8w">
+      <ObjectId>68748</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <UnderlyingIndexName>uk_8jqeq0se4r44untcy0jie5q8w</UnderlyingIndexName>
+    </key>
+    <foreign-key id="89" parent="15" name="fk_8jqeq0se4r44untcy0jie5q8w">
+      <ObjectId>68782</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <RefTableName>trackers</RefTableName>
+      <RefKeyName>trackers_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="90" parent="16" name="log_book_trips_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40995</StateNumber>
+    </column>
+    <column id="91" parent="16" name="trip_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40995</StateNumber>
+    </column>
+    <foreign-key id="92" parent="16" name="fk_8xs05gl03h4hp3ujr4qcy73d9">
+      <ObjectId>68792</ObjectId>
+      <ColNames>log_book_trips_id</ColNames>
+      <RefTableName>logbooks</RefTableName>
+      <RefKeyName>logbooks_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="93" parent="16" name="fk_8soux3mk5lc41gh7304g1237i">
+      <ObjectId>68787</ObjectId>
+      <ColNames>trip_id</ColNames>
+      <RefTableName>trips</RefTableName>
+      <RefKeyName>trips_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="94" parent="17" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="95" parent="17" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="96" parent="17" name="app_user_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="97" parent="17" name="company_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="98" parent="17" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="99" parent="17" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="100" parent="17" name="reservation_driver_name">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="101" parent="17" name="reservation_end_date">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="102" parent="17" name="reservation_end_location">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="103" parent="17" name="reservation_name">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="104" parent="17" name="reservation_rejection_reason">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="105" parent="17" name="reservation_start_date">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="106" parent="17" name="reservation_start_location">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="107" parent="17" name="reservation_state">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="108" parent="17" name="reservation_way_of_financing">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <column id="109" parent="17" name="reserved_car_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>28140</StateNumber>
+    </column>
+    <index id="110" parent="17" name="reservation_pkey">
+      <ObjectId>53582</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="111" parent="17" name="reservation_pkey">
+      <ObjectId>53583</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reservation_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="112" parent="18" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="113" parent="18" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="114" parent="18" name="app_user_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="115" parent="18" name="company_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="116" parent="18" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="117" parent="18" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="118" parent="18" name="reservation_driver_name">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="119" parent="18" name="reservation_end_date">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="120" parent="18" name="reservation_end_location">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="121" parent="18" name="reservation_name">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="122" parent="18" name="reservation_rejection_reason">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="123" parent="18" name="reservation_start_date">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="124" parent="18" name="reservation_start_location">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="125" parent="18" name="reservation_state">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="126" parent="18" name="reservation_way_of_financing">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <column id="127" parent="18" name="reserved_car_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40996</StateNumber>
+    </column>
+    <index id="128" parent="18" name="reservations_pkey">
+      <ObjectId>68710</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="129" parent="18" name="reservations_pkey">
+      <ObjectId>68711</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reservations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="130" parent="18" name="fk_sil3tag2t26k8tgujq349a6yn">
+      <ObjectId>68797</ObjectId>
+      <ColNames>app_user_id</ColNames>
+      <RefTableName>app_users</RefTableName>
+      <RefKeyName>app_users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="131" parent="18" name="fk_b9bo4pm7mhc8k2bgvxtijr1n6">
+      <ObjectId>68802</ObjectId>
+      <ColNames>company_id</ColNames>
+      <RefTableName>companies</RefTableName>
+      <RefKeyName>companies_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="132" parent="18" name="fk_mts1t25y0gwr0c5jy8b2t61hk">
+      <ObjectId>68807</ObjectId>
+      <ColNames>reserved_car_id</ColNames>
+      <RefTableName>cars</RefTableName>
+      <RefKeyName>cars_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="133" parent="19" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40997</StateNumber>
+    </column>
+    <column id="134" parent="19" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40997</StateNumber>
+    </column>
+    <column id="135" parent="19" name="authority">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40997</StateNumber>
+    </column>
+    <index id="136" parent="19" name="sec_role_pkey">
+      <ObjectId>68715</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="137" parent="19" name="uk_oah023x2ltqw09mdue7w0mcxb">
+      <ObjectId>68749</ObjectId>
+      <ColNames>authority</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="138" parent="19" name="sec_role_pkey">
+      <ObjectId>68716</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sec_role_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="139" parent="19" name="uk_oah023x2ltqw09mdue7w0mcxb">
+      <ObjectId>68750</ObjectId>
+      <ColNames>authority</ColNames>
+      <UnderlyingIndexName>uk_oah023x2ltqw09mdue7w0mcxb</UnderlyingIndexName>
+    </key>
+    <column id="140" parent="20" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="141" parent="20" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="142" parent="20" name="account_expired">
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="143" parent="20" name="account_locked">
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="144" parent="20" name="enabled">
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="145" parent="20" name="password">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="146" parent="20" name="password_expired">
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <column id="147" parent="20" name="username">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40998</StateNumber>
+    </column>
+    <index id="148" parent="20" name="sec_user_pkey">
+      <ObjectId>68723</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="149" parent="20" name="uk_5ctbdrlf3eismye20vsdtk8w8">
+      <ObjectId>68751</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="150" parent="20" name="sec_user_pkey">
+      <ObjectId>68724</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sec_user_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="151" parent="20" name="uk_5ctbdrlf3eismye20vsdtk8w8">
+      <ObjectId>68752</ObjectId>
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>uk_5ctbdrlf3eismye20vsdtk8w8</UnderlyingIndexName>
+    </key>
+    <column id="152" parent="21" name="sec_user_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40999</StateNumber>
+    </column>
+    <column id="153" parent="21" name="sec_role_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>40999</StateNumber>
+    </column>
+    <index id="154" parent="21" name="sec_user_sec_role_pkey">
+      <ObjectId>68728</ObjectId>
+      <ColNames>sec_user_id
+sec_role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="155" parent="21" name="sec_user_sec_role_pkey">
+      <ObjectId>68729</ObjectId>
+      <ColNames>sec_user_id
+sec_role_id</ColNames>
+      <UnderlyingIndexName>sec_user_sec_role_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="156" parent="21" name="fk_f1eew3u65ajs3e50xvacwgron">
+      <ObjectId>68812</ObjectId>
+      <ColNames>sec_user_id</ColNames>
+      <RefTableName>sec_user</RefTableName>
+      <RefKeyName>sec_user_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="157" parent="21" name="fk_bshvqhdx8h9mb4rrbo1ahnp7q">
+      <ObjectId>68817</ObjectId>
+      <ColNames>sec_role_id</ColNames>
+      <RefTableName>sec_role</RefTableName>
+      <RefKeyName>sec_role_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="158" parent="22" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="159" parent="22" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="160" parent="22" name="company_id">
+      <DataType>bigint|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="161" parent="22" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="162" parent="22" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="163" parent="22" name="tracker_assigned">
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="164" parent="22" name="tracker_gsm_mode">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="165" parent="22" name="tracker_imei">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="166" parent="22" name="tracker_name">
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <column id="167" parent="22" name="tracker_number">
+      <DataType>integer|0</DataType>
+      <StateNumber>41000</StateNumber>
+    </column>
+    <index id="168" parent="22" name="trackers_pkey">
+      <ObjectId>68736</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="169" parent="22" name="uk_71m0b4gv0d5f7w8c8t8fk6msq">
+      <ObjectId>68753</ObjectId>
+      <ColNames>tracker_imei</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="170" parent="22" name="uk_diydyi288cevf07o3mxslm1fy">
+      <ObjectId>68755</ObjectId>
+      <ColNames>tracker_number</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="171" parent="22" name="trackers_pkey">
+      <ObjectId>68737</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>trackers_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="172" parent="22" name="uk_71m0b4gv0d5f7w8c8t8fk6msq">
+      <ObjectId>68754</ObjectId>
+      <ColNames>tracker_imei</ColNames>
+      <UnderlyingIndexName>uk_71m0b4gv0d5f7w8c8t8fk6msq</UnderlyingIndexName>
+    </key>
+    <key id="173" parent="22" name="uk_diydyi288cevf07o3mxslm1fy">
+      <ObjectId>68756</ObjectId>
+      <ColNames>tracker_number</ColNames>
+      <UnderlyingIndexName>uk_diydyi288cevf07o3mxslm1fy</UnderlyingIndexName>
+    </key>
+    <foreign-key id="174" parent="22" name="fk_cb4yr9g6ccrhmaiwryyfmjv3q">
+      <ObjectId>68822</ObjectId>
+      <ColNames>company_id</ColNames>
+      <RefTableName>companies</RefTableName>
+      <RefKeyName>companies_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="175" parent="23" name="id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="176" parent="23" name="version">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="177" parent="23" name="app_user_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="178" parent="23" name="date_created">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="179" parent="23" name="last_updated">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="180" parent="23" name="reservation_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="181" parent="23" name="tracker_id">
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="182" parent="23" name="trip_authorized">
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="183" parent="23" name="trip_end_date_time">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="184" parent="23" name="trip_length">
+      <DataType>integer|0</DataType>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <column id="185" parent="23" name="trip_start_date_time">
+      <DataType>timestamp|0</DataType>
+      <StateNumber>41001</StateNumber>
+    </column>
+    <index id="186" parent="23" name="trips_pkey">
+      <ObjectId>68741</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="187" parent="23" name="trips_pkey">
+      <ObjectId>68742</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>trips_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="188" parent="23" name="fk_eph5gxw4wnk5lvcaqdhxeso6u">
+      <ObjectId>68827</ObjectId>
+      <ColNames>app_user_id</ColNames>
+      <RefTableName>app_users</RefTableName>
+      <RefKeyName>app_users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="189" parent="23" name="fk_qv2fgbwjdyhurmehc7yno91uc">
+      <ObjectId>68832</ObjectId>
+      <ColNames>reservation_id</ColNames>
+      <RefTableName>reservations</RefTableName>
+      <RefKeyName>reservations_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="190" parent="23" name="fk_rvd5t7yvlwr6spacoe2f8jy5l">
+      <ObjectId>68837</ObjectId>
+      <ColNames>tracker_id</ColNames>
+      <RefTableName>trackers</RefTableName>
+      <RefKeyName>trackers_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

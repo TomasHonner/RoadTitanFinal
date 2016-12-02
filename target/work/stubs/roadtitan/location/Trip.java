@@ -22,12 +22,13 @@ public  org.joda.time.DateTime getTripEndDateTime() { return (org.joda.time.Date
 public  void setTripEndDateTime(org.joda.time.DateTime value) { }
 public  java.lang.Integer getTripLength() { return (java.lang.Integer)null;}
 public  void setTripLength(java.lang.Integer value) { }
+public  boolean getTripAuthorized() { return false;}
+public  boolean isTripAuthorized() { return false;}
+public  void setTripAuthorized(boolean value) { }
 public static  java.lang.Object getHasMany() { return null;}
 public static  void setHasMany(java.lang.Object value) { }
 public static  java.lang.Object getBelongsTo() { return null;}
 public static  void setBelongsTo(java.lang.Object value) { }
-public static  java.lang.Object getHasOne() { return null;}
-public static  void setHasOne(java.lang.Object value) { }
 public  org.joda.time.DateTime getDateCreated() { return (org.joda.time.DateTime)null;}
 public  void setDateCreated(org.joda.time.DateTime value) { }
 public  org.joda.time.DateTime getLastUpdated() { return (org.joda.time.DateTime)null;}

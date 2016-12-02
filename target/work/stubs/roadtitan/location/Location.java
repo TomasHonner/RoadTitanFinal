@@ -22,8 +22,8 @@ public  java.lang.Double getLongitude() { return (java.lang.Double)null;}
 public  void setLongitude(java.lang.Double value) { }
 public  org.joda.time.DateTime getTimestamp() { return (org.joda.time.DateTime)null;}
 public  void setTimestamp(org.joda.time.DateTime value) { }
-public static  java.lang.Object getBelongsTo() { return null;}
-public static  void setBelongsTo(java.lang.Object value) { }
+public  roadtitan.location.Trip getTrip() { return (roadtitan.location.Trip)null;}
+public  void setTrip(roadtitan.location.Trip value) { }
 public  org.joda.time.DateTime getDateCreated() { return (org.joda.time.DateTime)null;}
 public  void setDateCreated(org.joda.time.DateTime value) { }
 public  org.joda.time.DateTime getLastUpdated() { return (org.joda.time.DateTime)null;}

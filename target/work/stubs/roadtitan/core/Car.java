@@ -24,8 +24,6 @@ public  enums.CarType getCarCarType() { return (enums.CarType)null;}
 public  void setCarCarType(enums.CarType value) { }
 public static  java.lang.Object getBelongsTo() { return null;}
 public static  void setBelongsTo(java.lang.Object value) { }
-public static  java.lang.Object getHasOne() { return null;}
-public static  void setHasOne(java.lang.Object value) { }
 public  org.joda.time.DateTime getDateCreated() { return (org.joda.time.DateTime)null;}
 public  void setDateCreated(org.joda.time.DateTime value) { }
 public  org.joda.time.DateTime getLastUpdated() { return (org.joda.time.DateTime)null;}
@@ -34,4 +32,5 @@ public static  java.lang.Object getConstraints() { return null;}
 public static  void setConstraints(java.lang.Object value) { }
 public static  java.lang.Object getMapping() { return null;}
 public static  void setMapping(java.lang.Object value) { }
+@java.lang.Override() public  java.lang.String toString() { return (java.lang.String)null;}
 }
