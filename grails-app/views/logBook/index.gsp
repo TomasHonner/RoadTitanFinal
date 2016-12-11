@@ -14,6 +14,7 @@
 
 <body>
     <div>
+        <h1><g:message code="logbook.title2" /></h1>
         <g:form name="selectCar" url="[action: 'show', controller: 'logBook']">
             <g:select class="form-control center marginBottom" id="carId" from="${cars}" name="car" value="car.id" optionKey="id" optionValue="carName"/>
             <g:submitButton id="carSelectButton" class="btn btn-lg btn-primary col-md-2 col-md-offset-5" name="showLogbook" value="${message(code: 'logbook.submitButton')}"/>

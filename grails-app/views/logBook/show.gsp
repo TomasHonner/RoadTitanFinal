@@ -19,6 +19,7 @@
 </head>
 
 <body>
+<h1><g:message code="logbook.title"/></h1>
 <g:render template="form" />
 <div>
     <table class="table table-condensed table-hover">

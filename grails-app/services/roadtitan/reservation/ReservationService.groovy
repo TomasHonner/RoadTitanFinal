@@ -1,5 +1,6 @@
 package roadtitan.reservation
 
+import enums.ReservationState
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import groovy.sql.Sql
@@ -39,7 +40,6 @@ class ReservationService {
         def reservationOvelap4 = Reservation.countByCompanyAndReservedCarAndReservationStartDateLessThanEqualsAndReservationEndDateGreaterThanEquals(rCompany, rCar, sDate, eDate)*/
 
         def reservationOvelap = Reservation.countByCompanyAndReservedCarAndReservationEndDateGreaterThanEqualsAndReservationStartDateLessThanEquals(rCompany, rCar, sDate, eDate)
-
         /*def listOfReservations = Reservation.find {
             reservationStartDate <= sDate && reservationEndDate >= eDate && company == rCompany && reservedCar == rCar
             prvni moznost

@@ -42,9 +42,9 @@
                 <td>${fieldValue(bean: reservationInstance, field: "reservationEndLocation")}</td>
                 <td>${fieldValue(bean: reservationInstance, field: "reservationDriverName")}</td>
                 <td>${fieldValue(bean: reservationInstance, field: "reservationState")}</td>
-                <td>${fieldValue(bean: reservationInstance, field: "reservationRejectionReason")}</td>
-                <td>${fieldValue(bean: reservationInstance, field: "reservationWayOfFinancing")}</td>
                 <td>${fieldValue(bean: reservationInstance, field: "appUser")}</td>
+                %{--<td>${fieldValue(bean: reservationInstance, field: "reservationWayOfFinancing")}</td>--}%
+
                 <td>
                     <g:link controller="reservation" action="approve" class="btn btn-sm btn-success" params="${[resId: reservationInstance.id]}"><g:message code="reservation.approve" /></g:link>
                     <g:link controller="reservation" action="reject" class="btn btn-sm btn-danger" params="${[resId: reservationInstance.id]}"><g:message code="reservation.reject" /></g:link>

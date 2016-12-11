@@ -4,7 +4,7 @@
 	<label for="reservationName" class="h4 control-label">
 		<g:message code="reservation.name" />
 	</label>
-	<g:textField class="form-control" name="reservationName" value="${reservationInstance?.reservationDriverName}"/>
+	<g:textField class="form-control" name="reservationName" value="${reservationInstance?.reservationName}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'reservationStartDate', 'error')} list-group-item">

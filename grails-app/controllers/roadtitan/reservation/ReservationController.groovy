@@ -16,6 +16,7 @@ class ReservationController {
     def secService
     def carService
     def reservationService
+    def mailService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -38,6 +39,11 @@ class ReservationController {
         Reservation reservation = Reservation.findById(Long.valueOf(params.resId))
         reservation.setReservationState(ReservationState.APPROVED)
         update(reservation)
+        mailService.sendMail{
+            to reservation.getAppUser().getAppUserEmail()
+            subject "reservation was changed"
+            body 'Your reservation in RoadTitan App was changed'
+        }
         redirect action: "forApproval", method: "GET"
     }
 
@@ -64,12 +70,6 @@ class ReservationController {
     @Transactional
     def preSave(Reservation reservationInstance)
     {
-        /*DateTime dtFrom = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").parseDateTime(params.reservationStartDate)
-        DateTime dtTo = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").parseDateTime(params.reservationEndDate)
-
-        reservationInstance.setReservationStartDate(dtFrom)
-        reservationInstance.setReservationEndDate(dtTo)*/
-
         if (reservationInstance.getReservationState() == null)
         {
             reservationInstance.setReservationState(ReservationState.WAITING_FOR_APPROVAL)
@@ -132,7 +132,16 @@ class ReservationController {
 
     def edit(Reservation reservationInstance) {
         def resCars = carService.getCurrentCars()
-        respond reservationInstance, model: [resCars: resCars]
+        System.out.print(reservationInstance.getReservationName().toString())
+        if (reservationService.checkReservationDate(reservationInstance.getReservationStartDate()))
+        {
+            render view: "errors", model: [error: message(code: 'reservation.error')]
+        }
+        else
+        {
+            respond reservationInstance, model: [resCars: resCars]
+        }
+
     }
 
     @Transactional
